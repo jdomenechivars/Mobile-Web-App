@@ -1,3 +1,187 @@
-*{
-/*  border: 1px solid black;*/
+* {
+  /*    border: 1px solid black;*/
+  /*  border: 1px solid white;*/
+  color: #1a1a1a;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  /*
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+*/
+  height: inherit;
+  background-color: #1a1a1a;
+  background-image: url(images/design2_image2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  background: white;
+  padding: 10px;
+  margin-top: -1px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.back {
+  width: 23%;
+  font-size: 32px;
+  font-family: 'Secular One', sans-serif;
+}
+
+.title {
+  width: 53%;
+  font-size: 50px;
+  color: #1a1a1a;
+  font-family: 'Secular One', sans-serif;
+  text-align: center;
+}
+
+.settings {
+  width: 23%;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+}
+
+.sett {
+  padding: 2px;
+  width: 40px;
+  height: 40px;
+}
+
+.logo {
+  /*  border: 1px solid black;*/
+  width: 100%;
+  /*    height: 30%;*/
+  /*  background-image: url(images/14075506.jpg);*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+#logo {
+  margin: 10px;
+  border: 3px solid white;
+  border-radius: 100%;
+  padding: 20px;
+}
+
+.teamName {
+  font-size: 50px;
+  font-family: 'Secular One', sans-serif;
+  text-align: center;
+}
+
+.arrowdiv {
+/*  border: 2px solid white;*/
+  display: flex;
+  align-content: flex-end;
+  justify-content: center;
+}
+
+.arrow {
+  font-size: 50px;
+  color: white;
+  transform: rotate(270deg)
+}
+
+.menuButtons {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: 50%;
+  margin: auto;
+}
+
+.leftButtons,
+.rightButtons {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  /*  border: 1px solid white;*/
+  font-size: 30px;
+  /*  margin: 5px auto;*/
+}
+
+a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  display: flex;
+  flex-flow: row nowrap;
+  border: 1px solid white;
+  /*    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+  background: rgba(255, 255, 255, 0.3);
+  /*    border-radius: 15px;*/
+  /*      background: #0E3F4B;*/
+  /*   For browsers that do not support gradients */
+  /*      background: -webkit-linear-gradient(#08242b, #0E3F4B);*/
+  /*   For Safari 5.1 to 6.0 */
+  /*      background: -o-linear-gradient(#08242b, #0E3F4B);*/
+  /*   For Opera 11.1 to 12.0 */
+  /*      background: -moz-linear-gradient(#08242b, #0E3F4B);*/
+  /*   For Firefox 3.6 to 15 */
+  /*      background: linear-gradient(#08242b, #0E3F4B);*/
+  /*     Standard syntax (must be last) */
+}
+
+.icon {
+  width: 50%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 2.5px;
+}
+
+.btitle {
+  width: 50%;
+  display: flex;
+}
+
+.left {
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.right {
+  justify-content: flex-end;
+  align-content: flex-start;
+}
+
+.buttonTitle {
+  color: white;
+  font-size: px;
+  ;
+  font-family: 'Secular One', sans-serif;
+  margin: 15px;
+}
+
+.menuIcon {
+  /*  border: 1px solid black;*/
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  padding: 15px;
 }
