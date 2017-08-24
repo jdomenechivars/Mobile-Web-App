@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "version": "versionString",
+  "short_name": "NYSL - APP",
+  "name": "Northside Youth Soccer League App",
+  "default_locale": "en",
+  "description": "The official NYSL APP",
+  "author": "Joan Domenech",
+  "icons": [
+    {
+      "src": "../styles/icons/soccer32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "../styles/icons/soccer64.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "../styles/icons/soccer32.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "../styles/icons/soccer256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    }
+  ],
+  "start_url": "/public/index.html?launcher=true",
+  "background_color": "#7b4396",
+  "theme_color": "#7b4396",
+  "display": "standalone",
+  "orientation": "portrait"
+}

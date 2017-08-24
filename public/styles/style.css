@@ -1,7 +1,7 @@
 /* GENERAL STYLE */
 
 * {
-/*      border: 1px solid black;*/
+  /*  border: 1px solid black;*/
   /*  border: 2px solid yellow;*/
   /*  border: 1px solid white;*/
   color: #1a1a1a;
@@ -18,7 +18,7 @@ body {
   /*  border: 5px solid orange;*/
   height: inherit;
   background: white;
-  background: -webkit-linear-gradient(white, gainsboro);
+  background: -webkit-linear-gradient(#ffffff, gainsboro);
   /*   For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(white, gainsboro);
   /*   For Opera 11.1 to 12.0 */
