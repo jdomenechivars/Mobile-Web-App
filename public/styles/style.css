@@ -26,7 +26,7 @@ body {
   /*   For Firefox 3.6 to 15 */
   background: linear-gradient(white, gainsboro);
   /*     Standard syntax (must be last) */
-/*  background-image: url(images/design2_image2.jpg);*/
+  background-image: url(images/design2_image2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
