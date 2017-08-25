@@ -1,7 +1,7 @@
 /* GENERAL STYLE */
 
 * {
-/*    border: 1px solid black;*/
+  /*    border: 1px solid black;*/
   /*  border: 2px solid yellow;*/
   /*  border: 1px solid white;*/
   color: #1a1a1a;
@@ -18,15 +18,15 @@ body {
   /*  border: 5px solid orange;*/
   height: inherit;
   background: white;
-  background: -webkit-linear-gradient(#7b4396, gainsboro);
+  background: -webkit-linear-gradient(white, gainsboro);
   /*   For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#7b4396, gainsboro);
+  background: -o-linear-gradient(white, gainsboro);
   /*   For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#7b4396, gainsboro);
+  background: -moz-linear-gradient(white, gainsboro);
   /*   For Firefox 3.6 to 15 */
-  background: linear-gradient(#7b4396, gainsboro);
+  background: linear-gradient(white, gainsboro);
   /*     Standard syntax (must be last) */
-/*  background-image: url(images/design2_image2.jpg);*/
+  /*  background-image: url(images/design2_image2.jpg);*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -39,18 +39,19 @@ header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  height: 6vh;
+  height: 8.1vh;
   padding: 10px;
   margin-top: -1px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background: white;
-  background: -webkit-linear-gradient(white, gainsboro);
+  background: #7b4396;
+  /*  background: white;*/
+  /*  background: -webkit-linear-gradient(white, gainsboro);*/
   /*   For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(white, gainsboro);
+  /*  background: -o-linear-gradient(white, gainsboro);*/
   /*   For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(white, gainsboro);
+  /*  background: -moz-linear-gradient(white, gainsboro);*/
   /*   For Firefox 3.6 to 15 */
-  background: linear-gradient(white, gainsboro);
+  /*  background: linear-gradient(white, gainsboro);*/
   /*     Standard syntax (must be last) */
 }
 
@@ -62,15 +63,15 @@ header {
 }
 
 .aback {
-  font-size: 2.6vw;
-  color: #1a1a1a;
+  font-size: 5vw;
+  color: white;
   font-family: 'Secular One', sans-serif;
   margin-left: 10%;
 }
 
 .aback:hover {
   text-decoration: none;
-  color: #1a1a1a;
+  color: white;
   font-family: 'Secular One', sans-serif;
 }
 
@@ -79,8 +80,8 @@ header {
   justify-content: center;
   align-items: center;
   width: 50%;
-  font-size: 3.5vw;
-  color: #1a1a1a;
+  font-size: 5vw;
+  color: white;
   font-family: 'Secular One', sans-serif;
   text-align: center;
   /*  text-shadow: 2px 2px 4px gainsboro;*/
@@ -91,8 +92,7 @@ header {
   justify-content: flex-end;
   align-items: center;
   width: 25%;
-
-/*  min-width: 110px;*/
+  /*  min-width: 110px;*/
   height: auto;
 }
 
@@ -123,10 +123,11 @@ header {
   height: 300vh;
 */
   margin: 10px;
-  border: 3px solid white;
+  /*  border: 3px solid white;*/
   border-radius: 100%;
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: #7b4396;
 }
 
 
@@ -152,6 +153,7 @@ header {
   margin: auto;
   overflow: hidden;
   box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #E8E8E8;
 }
 
 
@@ -196,8 +198,8 @@ header {
   width: 100%;
   height: 100%;
   text-decoration: none;
-  border: 1px solid white;
-  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid #686868;
+/*  background: rgba(255, 255, 255, 0.3);*/
   /*    border-radius: 15px;*/
   /*      background: #0E3F4B;*/
   /*   For browsers that do not support gradients */
@@ -212,7 +214,7 @@ header {
 }
 
 .icon {
-/*  border: 1px solid blue;*/
+  /*  border: 1px solid blue;*/
   display: flex;
   align-content: center;
   justify-content: center;
@@ -222,7 +224,7 @@ header {
 }
 
 .menuIcon {
-/*  border: 1px solid red;*/
+  /*  border: 1px solid red;*/
   width: 100%;
   max-width: 100px;
   min-width: 50px;
@@ -249,13 +251,13 @@ header {
 }
 
 .buttonTitle {
-  color: white;
+  color: #686868;
   font-size: 4vw;
   font-family: 'Secular One', sans-serif;
   margin: 15px;
-  text-shadow: 4px 4px 8px gainsboro;
-
+/*  text-shadow: 4px 4px 8px gainsboro;*/
 }
+
 
 /* NEWS & EVENTS PAGE */
 
