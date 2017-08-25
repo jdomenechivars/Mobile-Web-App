@@ -104,15 +104,63 @@ header {
 }
 
 
+/* SETTINGS PANEL */
+
+.settingsPanelShadow {
+  display: none;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(128, 128, 128, 0.5)
+}
+
+.settingsPanel {
+  /*  display: none;*/
+  position: absolute;
+  right: 0;
+  width: 90%;
+  height: 100%;
+  background: white;
+}
+
+.userProfile{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 30%;
+  background: #390055;
+}
+
+.userPic{
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  right: 8%;
+  top: 15%;
+  background: green;
+  border-radius: 100%;
+}
+
+.userName{
+  position: absolute;
+  right: 8%;
+  bottom: 15%;
+  font-size: 6vw;
+  color: white;
+}
+
+
 /* INDEX PAGE */
 
 .logo {
-  /*  border: 1px solid red;*/
+/*    border: 1px solid red;*/
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 50%;
+  height: 45%;
 }
 
 #logo {
@@ -142,7 +190,7 @@ header {
 
 /* index page menu */
 
-.menuButtons {
+.menuButtons{
   /*  border: 1px solid blue;*/
   position: absolute;
   bottom: 0;
@@ -153,27 +201,21 @@ header {
   margin: auto;
   overflow: hidden;
   box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.19);
-    background: #E8E8E8;
+  background: #E8E8E8;
+/*   display: block;*/
 }
 
-
-/*
 .arrowdiv {
   display: flex;
   align-content: flex-end;
   justify-content: center;
 }
-*/
-
-
-/*
 
 .arrow {
   font-size: 50px;
-  color: white;
+  color: #686868;
   transform: rotate(270deg)
 }
-*/
 
 .leftButtons,
 .rightButtons {
@@ -199,7 +241,7 @@ header {
   height: 100%;
   text-decoration: none;
   border: 1px solid #686868;
-/*  background: rgba(255, 255, 255, 0.3);*/
+  /*  background: rgba(255, 255, 255, 0.3);*/
   /*    border-radius: 15px;*/
   /*      background: #0E3F4B;*/
   /*   For browsers that do not support gradients */
@@ -255,7 +297,53 @@ header {
   font-size: 4vw;
   font-family: 'Secular One', sans-serif;
   margin: 15px;
-/*  text-shadow: 4px 4px 8px gainsboro;*/
+  /*  text-shadow: 4px 4px 8px gainsboro;*/
+}
+
+/* Index page little menu */
+
+.littleMenuButtons {
+ 
+  /*  border: 1px solid blue;*/
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-self: center;
+  width: 100%;
+  height: 8.1vh;
+  margin: auto;
+  overflow: hidden;
+  box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.19);
+  background: #E8E8E8;
+/*  display: none;*/
+
+}
+
+.littlebuton {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+}
+
+.alittlebuton {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+/*  border: 1px solid #686868;*/
+}
+
+.littleMenuIcon{
+  
+    /*  border: 1px solid red;*/
+  width: 45px;
+  height: 45px;
+  margin: auto;
+  padding: 15px;
+  
 }
 
 
