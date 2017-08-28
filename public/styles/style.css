@@ -1,7 +1,7 @@
 /* GENERAL STYLE */
 
 * {
-  /*    border: 1px solid black;*/
+  /*  border: 1px solid black;*/
   /*  border: 2px solid yellow;*/
   /*  border: 1px solid white;*/
   color: #1a1a1a;
@@ -39,16 +39,16 @@ header {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   height: 8.1vh;
   padding: 10px;
   margin-top: -1px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background: #7b4396;
   /*  background: white;*/
   /*  background: -webkit-linear-gradient(white, gainsboro);*/
@@ -66,11 +66,11 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 25%;
 }
 
@@ -93,11 +93,11 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 50%;
   font-size: 5vw;
   color: white;
@@ -111,11 +111,11 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 25%;
   /*  min-width: 110px;*/
   height: auto;
@@ -150,7 +150,7 @@ header {
   background: white;
 }
 
-.userProfile{
+.userProfile {
   position: absolute;
   top: 0;
   width: 100%;
@@ -158,7 +158,7 @@ header {
   background: #390055;
 }
 
-.userPic{
+.userPic {
   position: absolute;
   height: 100px;
   width: 100px;
@@ -168,7 +168,7 @@ header {
   border-radius: 100%;
 }
 
-.userName{
+.userName {
   position: absolute;
   right: 8%;
   bottom: 15%;
@@ -179,63 +179,48 @@ header {
 
 /* CONTENT */
 
-.content{
+/*
+.content {
   width: 100%;
   height: 100%;
 }
+*/
 
-#mainBackground{
-  
+#mainBackground {
   display: block;
-  
 }
 
-#news{
-  
+#news {
   display: none;
-  
 }
 
-#schedule{
-  
+#schedule {
   display: none;
-  
 }
 
-#scores{
-  
+#scores {
   display: none;
-  
 }
 
-#teams{
-  
+#teams {
   display: none;
-  
 }
 
-#chat{
-  
-  display: none;
-  
-}
-
-#contact{
-  
+#chat {
   display: none;
 }
 
 #logo {
-/*    border: 1px solid red;*/
+  /*    border: 1px solid red;*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
   height: 45%;
 }
@@ -252,18 +237,100 @@ header {
   border-radius: 100%;
   padding: 20px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background: #7b4396;
+}
+
+
+/* CONTACT */
+
+#contact {
+  display: none;
+  margin: 10px 20px;
+  height: 100%;
+
+}
+
+.contactLine {
+  font-size: 1rem;
+  margin: 15px 0;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 10px auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.profileImage {
+  width: 100%;
+}
+
+.name {
+  font-size: 2rem;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+}
+
+.jobTitle {
+  font-size: 1.25rem;
+  color: #686868;
+  margin-left: 10px;
+  font-family: 'Droid Sans Mono', sans-serif;
+}
+
+.phone,
+.mail {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.contactIcon {
+  font-size: 1.5rem;
+  margin-right: 5px;
+  width: 24px;
+  height: 24px;
+  color: #686868;
+}
+
+.adress {
+  margin: 10px 0;
+}
+
+.adressDescription {
+  font-weight: bold;
+  color: black;
+}
+
+.phoneDirection,
+.mailDirection,
+.direction {
+  color: black;
+  text-decoration: none;
+}
+
+.phoneDirection:hover,
+.mailDirection:hover,
+.direction:hover {
+  color: black;
+  text-decoration: none;
 }
 
 
 /* index page menu */
 
-.menu1{
+.menu1 {
   display: block;
 }
 
-.bigButtons{
+.bigButtons {
   /*  border: 1px solid blue;*/
   position: absolute;
   bottom: 0;
@@ -271,16 +338,16 @@ header {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-item-align: center;
-      align-self: center;
+  align-self: center;
   width: 100%;
   height: 45%;
   margin: auto;
   overflow: hidden;
   -webkit-box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.19);
   background: #E8E8E8;
-/*   display: block;*/
-}   
+  /*   display: block;*/
+}
 
 .leftButtons,
 .rightButtons {
@@ -289,8 +356,8 @@ header {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
   width: 100%;
   height: 100%;
   margin: auto;
@@ -301,8 +368,8 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   font-size: 30px;
@@ -314,8 +381,8 @@ header {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
   width: 100%;
   height: 100%;
   text-decoration: none;
@@ -340,10 +407,10 @@ header {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 50%;
   height: auto;
   padding: 2.5px;
@@ -370,18 +437,18 @@ header {
 
 .left {
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -ms-flex-line-pack: start;
-      align-content: flex-start;
+  align-content: flex-start;
 }
 
 .right {
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   -ms-flex-line-pack: start;
-      align-content: flex-start;
+  align-content: flex-start;
 }
 
 .buttonTitle {
@@ -392,14 +459,14 @@ header {
   /*  text-shadow: 4px 4px 8px gainsboro;*/
 }
 
+
 /* Index page little menu */
 
-.menu2{
+.menu2 {
   display: none;
 }
 
 .littleMenuButtons {
- 
   /*  border: 1px solid blue;*/
   position: fixed;
   bottom: 0;
@@ -407,17 +474,16 @@ header {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-item-align: center;
-      align-self: center;
+  align-self: center;
   width: 100%;
   height: 8.1vh;
   margin: auto;
   overflow: hidden;
   margin-bottom: -1px;
   -webkit-box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.19);
   background: #E8E8E8;
-/*  display: none;*/
-
+  /*  display: none;*/
 }
 
 .littlebuton {
@@ -425,8 +491,8 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   font-size: 30px;
@@ -438,21 +504,18 @@ header {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
   width: 100%;
   height: 100%;
   text-decoration: none;
-/*  border: 1px solid #686868;*/
+  /*  border: 1px solid #686868;*/
 }
 
-.littleMenuIcon{
-  
-    /*  border: 1px solid red;*/
+.littleMenuIcon {
+  /*  border: 1px solid red;*/
   width: 53px;
   height: 53px;
   margin: auto;
   padding: 15px;
-  
 }
-
