@@ -1,7 +1,7 @@
 /* GENERAL STYLE */
 
 * {
-  /*  border: 1px solid black;*/
+    border: 1px solid black;
   /*  border: 2px solid yellow;*/
   /*  border: 1px solid white;*/
   color: #1a1a1a;
@@ -179,19 +179,10 @@ header {
 
 /* CONTENT */
 
-/*
-.content {
-  width: 100%;
-  height: 100%;
-}
-*/
+/*.content {}*/
 
 #mainBackground {
   display: block;
-}
-
-#news {
-  display: none;
 }
 
 #schedule {
@@ -242,13 +233,85 @@ header {
 }
 
 
+/* NEWS */
+
+#news {
+  display: none;
+/*  overflow: scroll;*/
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  height: 100%;
+  font-weight: 500;
+  color: #7b4396;
+}
+
+.nav-tabs .nav-link {
+  color: #686868;
+}
+
+.new{
+  display: flex;
+  flex-flow: column nowrap;
+/*  border: 1px solid #686868;*/
+  border-radius: .25rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 80%;
+  height: auto;
+  margin: 10px auto;
+  font-family: "arial";
+  background-color: white;
+}
+
+.newsTitle{
+  text-align:left;
+  font-size: 8vw;
+  margin: 10px 20px;
+  font-weight: bold;
+  font-family: "Droid Sans Mono", sans-serif;
+  padding: 10px;
+  
+}
+
+.newsDate{
+  font-size: .75rem;
+  text-align: right;
+  margin: 10px 20px;
+  padding: 10px;
+  color: #686868;
+  
+}
+
+.plusIcon, .minusIcon{
+  width: 20px;
+  height: 20px;
+  margin: 10px 20px;
+}
+
+.minusIcon{
+  display: none;
+}
+
+.newsContent{
+  font-size: 5.5vw;
+  display: none;
+  border-top: 1px solid #686868;
+   text-align: justify;
+  font-family: 'Inconsolata', monospace;
+  margin: 10px 20px;
+  padding: 10px;
+  color: #686868;
+}
+
+
 /* CONTACT */
 
 #contact {
   display: none;
   margin: 10px 20px;
   height: 100%;
-
+  /*  overflow: scroll;*/
 }
 
 .contactLine {

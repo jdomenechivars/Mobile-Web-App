@@ -117,6 +117,15 @@ $(document).ready(function () {
     $('#contact').show();
 
   });
+  
+  $(".new").click(function () {
+    
+    $(this).children(".newsContent").toggle();
+    $(this).children(".plusIcon").toggle();
+    $(this).children(".minusIcon").toggle();
+
+  });
+
 
 
 });
