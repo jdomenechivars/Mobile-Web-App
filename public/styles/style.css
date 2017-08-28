@@ -18,12 +18,10 @@ body {
   /*  border: 5px solid orange;*/
   height: inherit;
   background: white;
-  background: -webkit-linear-gradient(white, gainsboro);
   /*   For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(white, gainsboro);
   /*   For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(white, gainsboro);
   /*   For Firefox 3.6 to 15 */
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(gainsboro));
   background: linear-gradient(white, gainsboro);
   /*     Standard syntax (must be last) */
   /*  background-image: url(images/design2_image2.jpg);*/
@@ -36,13 +34,21 @@ body {
 /* header */
 
 header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   height: 8.1vh;
   padding: 10px;
   margin-top: -1px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background: #7b4396;
   /*  background: white;*/
   /*  background: -webkit-linear-gradient(white, gainsboro);*/
@@ -56,13 +62,20 @@ header {
 }
 
 .back {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 25%;
 }
 
 .aback {
+  display: none;
   font-size: 5vw;
   color: white;
   font-family: 'Secular One', sans-serif;
@@ -75,10 +88,16 @@ header {
   font-family: 'Secular One', sans-serif;
 }
 
-.title {
+#title {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 50%;
   font-size: 5vw;
   color: white;
@@ -88,9 +107,15 @@ header {
 }
 
 .settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 25%;
   /*  min-width: 110px;*/
   height: auto;
@@ -152,18 +177,70 @@ header {
 }
 
 
-/* INDEX PAGE */
+/* CONTENT */
 
-.logo {
+.content{
+  width: 100%;
+  height: 100%;
+}
+
+#mainBackground{
+  
+  display: block;
+  
+}
+
+#news{
+  
+  display: none;
+  
+}
+
+#schedule{
+  
+  display: none;
+  
+}
+
+#scores{
+  
+  display: none;
+  
+}
+
+#teams{
+  
+  display: none;
+  
+}
+
+#chat{
+  
+  display: none;
+  
+}
+
+#contact{
+  
+  display: none;
+}
+
+#logo {
 /*    border: 1px solid red;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 45%;
 }
 
-#logo {
+.logo {
   max-width: 190px;
   max-height: 190px;
   /*
@@ -174,69 +251,71 @@ header {
   /*  border: 3px solid white;*/
   border-radius: 100%;
   padding: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background: #7b4396;
 }
 
 
-/* is hidden on html:
-.teamName {
-  font-size: 50px;
-  font-family: 'Secular One', sans-serif;
-  text-align: center;
-}
-*/
-
-
 /* index page menu */
 
-.menuButtons{
+.menu1{
+  display: block;
+}
+
+.bigButtons{
   /*  border: 1px solid blue;*/
   position: absolute;
   bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   width: 100%;
   height: 45%;
   margin: auto;
   overflow: hidden;
-  box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.19);
   background: #E8E8E8;
 /*   display: block;*/
-}
-
-.arrowdiv {
-  display: flex;
-  align-content: flex-end;
-  justify-content: center;
-}
-
-.arrow {
-  font-size: 50px;
-  color: #686868;
-  transform: rotate(270deg)
-}
+}   
 
 .leftButtons,
 .rightButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
   width: 100%;
   height: 100%;
   margin: auto;
 }
 
 .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: 100%;
   font-size: 30px;
 }
 
 .abutton {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   width: 100%;
   height: 100%;
   text-decoration: none;
@@ -257,9 +336,14 @@ header {
 
 .icon {
   /*  border: 1px solid blue;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-content: center;
-  justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 50%;
   height: auto;
   padding: 2.5px;
@@ -279,22 +363,30 @@ header {
 
 .btitle {
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .left {
-  justify-content: flex-start;
-  align-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
 }
 
 .right {
-  justify-content: flex-end;
-  align-content: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
 }
 
 .buttonTitle {
   color: #686868;
-  font-size: 4vw;
+  font-size: 3.25vw;
   font-family: 'Secular One', sans-serif;
   margin: 15px;
   /*  text-shadow: 4px 4px 8px gainsboro;*/
@@ -302,34 +394,52 @@ header {
 
 /* Index page little menu */
 
+.menu2{
+  display: none;
+}
+
 .littleMenuButtons {
  
   /*  border: 1px solid blue;*/
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   width: 100%;
   height: 8.1vh;
   margin: auto;
   overflow: hidden;
-  box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: -1px;
+  -webkit-box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.19);
   background: #E8E8E8;
 /*  display: none;*/
 
 }
 
 .littlebuton {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: 100%;
   font-size: 30px;
 }
 
 .alittlebuton {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   width: 100%;
   height: 100%;
   text-decoration: none;
@@ -339,24 +449,10 @@ header {
 .littleMenuIcon{
   
     /*  border: 1px solid red;*/
-  width: 45px;
-  height: 45px;
+  width: 53px;
+  height: 53px;
   margin: auto;
   padding: 15px;
   
 }
 
-
-/* NEWS & EVENTS PAGE */
-
-#news {
-  display: flex;
-}
-
-
-/*
-#info,
-#upcoming {
-  width: 49%;
-}
-*/

@@ -10,9 +10,9 @@
 
   <meta charset="UTF-8">
 
-  <meta name="description" content="The official NYSL APP">
+  <meta name="description" content="The official Northside Youth Soccer League App">
 
-  <meta name="keywords" content="NYSL,football,soccer,league">
+  <meta name="keywords" content="NYSL,football,soccer,league, youth, league, northside">
 
   <meta name="author" content="Joan Domenech">
 
@@ -49,14 +49,12 @@
   <!-- Full-screen webapp  -->
 
   <meta name="mobile-web-app-capable" content="yes">
-
   <meta name="apple-mobile-web-app-capable" content="yes">
 
   <!-- Color browser bar -->
 
   <meta name="theme-color" content="#7b4396">
   <meta name="background-color" content="#7b4396">
-
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <!-- Bootstrap -->
@@ -107,9 +105,13 @@
 
   <header>
 
-    <div class="back"></div>
+    <div class="back">
 
-    <div class="title">NYSL - APP</div>
+      <a class="aback" href="index.html">‹</a>
+
+    </div>
+
+    <div id="title">NYSL - APP</div>
 
     <div class="settings">
 
@@ -119,88 +121,159 @@
 
   </header>
 
+  <div class="content">
 
-  <div class="logo">
+    <div id="mainBackground">
 
-    <img id="logo" title="NYSL" src="styles/images/nysl_logo.png" alt="logo">
+      <div id="logo">
+
+        <img class="logo" title="NYSL" src="styles/images/nysl_logo.png" alt="logo">
+
+      </div>
+
+    </div>
+
+    <section id="news">
+
+      <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+
+        <li class="nav-item">
+
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-expanded="true">LATEST NEWS</a>
+
+        </li>
+
+        <li class="nav-item">
+
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">UPCOMING EVENTS</a>
+
+        </li>
+
+      </ul>
+
+      <div class="tab-content" id="myTabContent">
+
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+          <article class="new">
+
+            <h2 class="newsTitle">Inscriptions</h2>
+
+            <p class="content">Remember that all players must have sent the registration form duly completed.</p>
+
+          </article>
+
+          <article class="new">
+
+            <h2 class="newsTitle">New arbitration rules</h2>
+
+            <p class="content">The Dispute Resolution Chamber (DRC) is FIFA's deciding body that provides arbitration and dispute resolution on the basis of equal representation of players and clubs and an independent chairman. The DRC adjudicates on a regular basis in the presence of a varying composition of members.</p>
+
+          </article>
+
+          <article class="new">
+
+            <h2 class="newsTitle">Google Donation</h2>
+
+            <p class="content">Google has made a donation to the team of $ 1,000, this will be used to renew the sports equipment.</p>
+
+          </article>
+
+        </div>
+
+        <section class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+          <article class="event">
+
+            <time datetime="08-04" class="eventDate">August 4</time>
+
+            <h2 class="eventTitle">NYSL Fundraiser</h2>
+
+            <p class="content">The season start with the annual NYSL Fundraiser dinner. Anyone interested in attending dinner should contact the organization.</p>
+
+          </article>
+
+          <article class="event">
+
+            <time datetime="08-16" class="eventDate">August 16</time>
+
+            <h2 class="eventTitle">Season Kick-off: Meet the Teams</h2>
+
+            <p class="content">An afternoon of snack so that the players know each other and enjoy before the start of the season.</p>
+
+          </article>
+
+          <div id="schedule"></div>
+
+          <div id="scores"></div>
+
+          <div id="teams"></div>
+
+          <div id="chat"></div>
+
+          <article class="event">
+
+            <time datetime="08-12" class="eventDate">August 18</time>
+
+            <h2 class="eventTitle">Distribution of new uniforms</h2>
+
+            <p class="content">The uniforms will be delivered ath the NYSL office during all day.</p>
+
+          </article>
+
+          <article class="event">
+
+            <time datetime="09-01" class="eventDate">September 1</time>
+
+            <h2 class="eventTitle"> First Game of the Season (Check <a href="schedule.html">Game Schedule</a> for details)</h2>
+
+          </article>
+
+        </section>
+
+      </div>
+
+    </section>
+
+
+    <article id="contact">
+
+      <p class="undertable"><span>Please direct all questions to:</span>
+
+        <div itemscope itemtype="http://schema.org/Person">
+          <p><span itemprop="name">Michael Randall</span></p>
+          <p><span itemprop="jobTitle">League Coordinator</span></p>
+
+          <section itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+
+            <h1>Adress:</h1>
+
+            <span itemprop="streetAddress">601 W Montrose Ave,</span>
+            <span itemprop="addressLocality">Chicago,</span>
+            <span itemprop="addressRegion">IL</span>
+            <span itemprop="postalCode">60613</span>
+          </section>
+
+          <a itemprop="telephone" href="tel://6306908132">(630) 690-8132</a>
+
+          <a href="mailto:nysl@chisoccer.org" itemprop="email"> michael.randall@chisoccer.org</a>
+
+        </div>
+
+    </article>
 
   </div>
 
-  <!--  <div class="teamName">NORTHSIDE YOUTH SOCCER LEAGUE</div>-->
 
-  <div class="arrowdiv"><span class="arrow">›</span></div>
+  <div class="menu1">
 
-  <div class="littleMenuButtons">
-
-    <div class="littlebuton">
-
-      <a class="alittlebuton" href="news.html">
-
-        <img class="littleMenuIcon" title="News & Events" src="styles/icons/fireball.png" alt="fireball icon">
-
-      </a>
-
-    </div>
-
-    <div class="littlebuton">
-
-      <a class="alittlebuton" href="schedule.html">
-
-        <img class="littleMenuIcon" title="Schedule" src="styles/icons/calendar.png" alt="calendar icon">
-
-      </a>
-
-    </div>
-
-    <div class="littlebuton">
-
-      <a class="alittlebuton" href="teams.html">
-
-        <img class="littleMenuIcon" title="Teams" src="styles/icons/t-shirt.png" alt="t-shirt icon">
-
-      </a>
-
-    </div>
-
-    <div class="littlebuton">
-
-      <a class="alittlebuton" href="scores.html">
-
-        <img class="littleMenuIcon" title="Scores" src="styles/icons/trophy.png" alt="trophy icon">
-
-      </a>
-
-    </div>
-
-    <div class="littlebuton">
-
-      <a class="alittlebuton" href="chat.html">
-
-        <img class="littleMenuIcon" title="Chat" src="styles/icons/chat.png" alt="chat icon">
-
-      </a>
-
-    </div>
-
-    <div class="littlebuton">
-
-      <a class="alittlebuton" href="contact.html">
-
-        <img class="littleMenuIcon" title="Contact" src="styles/icons/whistle.png" alt="whistle icon">
-
-      </a>
-
-    </div>
-    
-  </div>
-
-    <div class="menuButtons">
+    <div class="bigButtons">
 
       <div class="leftButtons">
 
-        <div class="button">
+        <div class="button news">
 
-          <a class="abutton" href="news.html">
+          <a class="abutton" href="#">
 
             <div class="btitle left">
 
@@ -218,9 +291,9 @@
 
         </div>
 
-        <div class="button">
+        <div class="button teams">
 
-          <a class="abutton" href="teams.html">
+          <a class="abutton" href="#">
 
             <div class="btitle left">
 
@@ -238,9 +311,9 @@
 
         </div>
 
-        <div class="button">
+        <div class="button scores">
 
-          <a class="abutton" href="scores.html">
+          <a class="abutton" href="#">
 
             <div class="btitle left">
 
@@ -262,9 +335,9 @@
 
       <div class="rightButtons">
 
-        <div class="button">
+        <div class="button schedule">
 
-          <a class="abutton" href="schedule.html">
+          <a class="abutton" href="#">
 
             <div class="icon">
 
@@ -282,9 +355,9 @@
 
         </div>
 
-        <div class="button">
+        <div class="button chat">
 
-          <a class="abutton" href="chat.html">
+          <a class="abutton" href="#">
 
             <div class="icon">
 
@@ -302,9 +375,9 @@
 
         </div>
 
-        <div class="button">
+        <div class="button contact">
 
-          <a class="abutton" href="contact.html">
+          <a class="abutton" href="#">
 
             <div class="icon">
 
@@ -324,30 +397,100 @@
 
       </div>
 
-      <!--<div class="button"><a class="abutton" href=""><img class="menuIcon" src="styles/icons/medal.png" alt="medal icon">SPONSORS</a></div>-->
+    </div>
+
+    <!--<div class="button"><a class="abutton" href=""><img class="menuIcon" src="styles/icons/medal.png" alt="medal icon">SPONSORS</a></div>-->
+
+  </div>
+
+  <div class="menu2">
+
+    <div class="littleMenuButtons">
+
+      <div class="littlebuton news">
+
+        <a class="alittlebuton" href="#">
+
+          <img class="littleMenuIcon" title="News & Events" src="styles/icons/fireball.png" alt="fireball icon">
+
+        </a>
+
+      </div>
+
+      <div class="littlebuton schedule">
+
+        <a class="alittlebuton" href="#">
+
+          <img class="littleMenuIcon" title="Schedule" src="styles/icons/calendar.png" alt="calendar icon">
+
+        </a>
+
+      </div>
+
+      <div class="littlebuton teams">
+
+        <a class="alittlebuton" href="#">
+
+          <img class="littleMenuIcon" title="Teams" src="styles/icons/t-shirt.png" alt="t-shirt icon">
+
+        </a>
+
+      </div>
+
+      <div class="littlebuton scores">
+
+        <a class="alittlebuton" href="#">
+
+          <img class="littleMenuIcon" title="Scores" src="styles/icons/trophy.png" alt="trophy icon">
+
+        </a>
+
+      </div>
+
+      <div class="littlebuton chat">
+
+        <a class="alittlebuton" href="#">
+
+          <img class="littleMenuIcon" title="Chat" src="styles/icons/chat.png" alt="chat icon">
+
+        </a>
+
+      </div>
+
+      <div class="littlebuton contact">
+
+        <a class="alittlebuton" href="#">
+
+          <img class="littleMenuIcon" title="Contact" src="styles/icons/whistle.png" alt="whistle icon">
+
+        </a>
+
+      </div>
 
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyCQeELNjIUjlz2K8tJO7EYIFgXqK6Oa9ag",
-        authDomain: "nysl-app-a81ca.firebaseapp.com",
-        databaseURL: "https://nysl-app-a81ca.firebaseio.com",
-        projectId: "nysl-app-a81ca",
-        storageBucket: "nysl-app-a81ca.appspot.com",
-        messagingSenderId: "1056916219701"
-      };
-      firebase.initializeApp(config);
+  </div>
 
-    </script>
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCQeELNjIUjlz2K8tJO7EYIFgXqK6Oa9ag",
+      authDomain: "nysl-app-a81ca.firebaseapp.com",
+      databaseURL: "https://nysl-app-a81ca.firebaseio.com",
+      projectId: "nysl-app-a81ca",
+      storageBucket: "nysl-app-a81ca.appspot.com",
+      messagingSenderId: "1056916219701"
+    };
+    firebase.initializeApp(config);
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  </script>
 
-    <script src="js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+  <script src="js/main.js"></script>
 
 </body>
 
