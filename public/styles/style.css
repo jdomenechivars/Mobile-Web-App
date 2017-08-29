@@ -1,7 +1,7 @@
 /* GENERAL STYLE */
 
 * {
-    border: 1px solid black;
+  /*    border: ;: 1px solid black;*/
   /*  border: 2px solid yellow;*/
   /*  border: 1px solid white;*/
   color: #1a1a1a;
@@ -179,14 +179,11 @@ header {
 
 /* CONTENT */
 
+
 /*.content {}*/
 
 #mainBackground {
   display: block;
-}
-
-#schedule {
-  display: none;
 }
 
 #scores {
@@ -237,7 +234,7 @@ header {
 
 #news {
   display: none;
-/*  overflow: scroll;*/
+  /*  overflow: scroll;*/
 }
 
 .nav-tabs .nav-item.show .nav-link,
@@ -251,10 +248,10 @@ header {
   color: #686868;
 }
 
-.new{
+.new, .event {
   display: flex;
   flex-flow: column nowrap;
-/*  border: 1px solid #686868;*/
+  /*  border: 1px solid #686868;*/
   border-radius: .25rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 80%;
@@ -264,46 +261,96 @@ header {
   background-color: white;
 }
 
-.newsTitle{
-  text-align:left;
+.newsTitle, .eventDate{
+  text-align: left;
   font-size: 8vw;
   margin: 10px 20px;
   font-weight: bold;
   font-family: "Droid Sans Mono", sans-serif;
   padding: 10px;
-  
 }
 
-.newsDate{
+.newsDate, .eventTitle {
   font-size: .75rem;
   text-align: right;
   margin: 10px 20px;
   padding: 10px;
   color: #686868;
-  
 }
 
-.plusIcon, .minusIcon{
+.eventTitle{
+  font-size: 1.15rem;
+}
+
+.plusIcon,
+.minusIcon {
   width: 20px;
   height: 20px;
   margin: 10px 20px;
 }
 
-.minusIcon{
+.minusIcon {
   display: none;
 }
 
-.newsContent{
+.newsContent, .eventContent {
   font-size: 5.5vw;
   display: none;
   border-top: 1px solid #686868;
-   text-align: justify;
+  text-align: justify;
   font-family: 'Inconsolata', monospace;
   margin: 10px 20px;
   padding: 10px;
   color: #686868;
 }
 
+/* SCHEDULE */
+
+#schedule {
+  display: none;
+}
+
+.game{
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  /*  border: 1px solid #686868;*/
+  border-radius: .25rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);  
+  margin: 10px auto;
+  font-family: "arial";
+  background-color: white;
+}
+
+.gameDate{
+  display: flex;
+  flex-flow: row nowrap;
+  background: #686868;
+  padding: 10px 20px;
+}
+
+.gameDay, .gameMonth{
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  
+}
+
+.gameDay{
+  margin: auto 5px;
+}
+
+.gameTeams{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin: 10px 20px;
+}
+
+.team1, .team2, .vs{
+  margin: auto 5px;
+}
 
 /* CONTACT */
 
@@ -324,7 +371,7 @@ header {
   max-width: 300px;
   margin: 10px auto;
   text-align: center;
-  font-family: arial;
+  font-family: "arial";
 }
 
 .profileImage {
