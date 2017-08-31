@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+
   $(".sett").click(function () {
     $(".settingsPanelShadow").show();
   });
@@ -52,7 +53,7 @@ $(document).ready(function () {
     $("#chat").hide();
     $('#contact').hide();
 
-    createSchedule();
+    //    createSchedule();
 
   });
 
@@ -137,11 +138,16 @@ $(document).ready(function () {
 });
 
 
-function createSchedule() {
+$.getJSON("json/schedule.json", function (data) {
+
+  createSchedule(data);
+
+});
+
+
+function createSchedule(data) {
 
   var matches = data.matches;
-
-  //  console.log(matches);
 
   var Schedule = $("#schedule");
 
@@ -156,7 +162,19 @@ function createSchedule() {
 
     createDateInfo(game, creaGame);
     createTeamsInfo(game, creaGame);
+    createTimeInfo(game, creaGame);
+    createFieldInfo(game, creaGame);
+    
+      $(".game").click(function () {
+
+    $(this).children(".field").toggle();
+    $(this).children(".gameTime").toggle();
+
+
+  });
+
     Schedule.append(creaGame);
+
   }
 
 }
@@ -179,7 +197,7 @@ function createTeamsInfo(game, creaGame) {
 
   var VS = document.createElement("p");
   VS.setAttribute("class", "vs");
-  VS.innerHTML = " VS ";
+  VS.innerHTML = " VS. ";
 
   teams.appendChild(firstTeam);
   teams.appendChild(VS);
@@ -191,67 +209,68 @@ function createTeamsInfo(game, creaGame) {
 function createDateInfo(game, creaGame) {
 
   var day = game.date.day;
+
   var month = game.date.month;
 
   var dateTime = month + "-" + day;
 
   switch (month) {
 
-    case 01:
+    case "01":
 
       month = "January"
       break;
 
-    case 02:
+    case "02":
 
       month = "February"
       break;
 
-    case 03:
+    case "03":
 
       month = "March"
       break;
 
-    case 04:
+    case "04":
 
       month = "April"
       break;
 
-    case 05:
+    case "05":
 
       month = "May"
       break;
 
-    case 06:
+    case "06":
 
       month = "June"
       break;
 
-    case 07:
+    case "07":
 
       month = "July"
       break;
 
-    case 08:
+    case "08":
 
       month = "August"
       break;
 
-    case 09:
+    case "09":
 
       month = "September"
       break;
-    case 10:
+    case "10":
 
       month = "October"
       break;
 
-    case 11:
+    case "11":
 
       month = "November"
       break;
 
-    case 12:
+    case "12":
 
       month = "December"
       break;
@@ -273,5 +292,93 @@ function createDateInfo(game, creaGame) {
   date.appendChild(monthP);
   date.appendChild(dayP);
   creaGame.appendChild(date);
+
+}
+
+function createTimeInfo(game, creaGame) {
+
+  var hour = game.date.time.hour;
+  var minuts = game.date.time.minuts;
+  var period = game.date.time.period;
+
+  var time = hour + ":" + minuts;
+  var timePeriod = "Time: " + time + " " + period;
+
+  var timeP = document.createElement("p");
+  timeP.setAttribute("class", "gameHour")
+
+  var gameTime = document.createElement("time");
+  gameTime.setAttribute("datetime", time);
+  gameTime.setAttribute("class", "gameTime");
+  timeP.innerHTML = timePeriod;
+  gameTime.appendChild(timeP);
+  creaGame.appendChild(gameTime);
+
+}
+
+function createFieldInfo(game, creaGame, stad) {
+
+  var field = game.location;
+
+  var fieldDiv = document.createElement("div");
+  fieldDiv.setAttribute("class", "field");
+
+  $.getJSON("json/stadiums.json", function (stad) {
+
+    var stadiums = stad.stadiums;
+
+    for (j = 0; j < stadiums.length; j++) {
+
+      var eachStadium = stadiums[j];
+
+      if (field == stadiums[j].short) {
+
+        var thatField = stadiums[j];
+
+        var fieldP = document.createElement("p");
+        fieldP.setAttribute("class", "gameStadium");
+        fieldP.innerHTML = thatField.name;
+        fieldDiv.appendChild(fieldP);
+
+        moreFieldInfo(thatField, fieldDiv);
+
+      }
+
+      creaGame.appendChild(fieldDiv);
+
+    }
+
+  });
+
+}
+
+function moreFieldInfo(thatField, fieldDiv) {
+
+  var stadiumInfo = document.createElement("div");
+  stadiumInfo.setAttribute("class", "stadiumInfo");
+
+  var street = thatField.adress.street;
+  var locality = thatField.adress.locality;
+  var region = thatField.adress.region;
+  var postalcode = thatField.adress.postalcode;
+
+  var firstLineAdress = street + ","
+  var secondLineAdress = locality + ", " + region + " " + postalcode;
+
+  var adressDiv = document.createElement("div");
+  adressDiv.setAttribute("class", "adressDiv");
+
+  var stadiumStreet = document.createElement("p");
+  stadiumStreet.setAttribute("class", "stadiumStreet");
+  stadiumStreet.innerHTML = firstLineAdress;
+
+  var stadiumLocality = document.createElement("p");
+  stadiumLocality.setAttribute("class", "stadiumLocality");
+  stadiumLocality.innerHTML = secondLineAdress;
+
+  adressDiv.appendChild(stadiumStreet);
+  adressDiv.appendChild(stadiumLocality);
+
+  fieldDiv.appendChild(adressDiv);
 
 }

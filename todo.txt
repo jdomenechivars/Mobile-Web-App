@@ -1,0 +1,10 @@
+# CSS
+- FIX BACKROUND BODY SIZE
+- arreglar size del logo
+- arreglar iconos
+- arreglar portrait mode
+
+# JS
+- FIX GAME TIME ZEROS
+- slides entre secciones
+
