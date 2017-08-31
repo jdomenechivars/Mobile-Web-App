@@ -179,11 +179,17 @@ header {
 
 /* CONTENT */
 
-
-/*.content {}*/
+.content {
+  height: 100%;
+  width: 100%;
+}
 
 #mainBackground {
-  display: block;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
 }
 
 #scores {
@@ -239,13 +245,26 @@ header {
 
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 100%;
   font-weight: 500;
   color: #7b4396;
 }
 
 .nav-tabs .nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #686868;
+}
+
+.nav-item{
+   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .new,
@@ -353,12 +372,41 @@ header {
   margin: 10px 20px;
 }
 
-.team1,
-.team2,
+.U1,
+.U2,
+.U3,
+.U4,
+.U5,
+.U6,
 .vs {
   margin: auto 5px;
+  font-family: 'VT323', monospace;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 2rem;
+}
+
+.U1 {
+  color: #422650;
+}
+
+.U2 {
+  color: #ac77c5;
+}
+
+.U3 {
+  color: #8949a6;
+}
+
+.U4 {
+  color: #9351b3;
+}
+
+.U5 {
+  color: #7a4294;
+}
+
+.U6 {
+  color: #8347a0;
 }
 
 .gameTime,
@@ -380,15 +428,15 @@ header {
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-    margin: 10px 20px;
-
+  margin: 10px 20px;
 }
 
 .adressDiv {
   border-top: 1px solid #686868;
 }
 
-.directionA, .directionA:hover{
+.directionA,
+.directionA:hover {
   text-decoration: none;
 }
 

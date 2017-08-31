@@ -1,10 +1,15 @@
 # CSS
 - FIX BACKROUND BODY SIZE
-- arreglar size del logo
-- arreglar iconos
+- FIX ICONS SIZE
++ arreglar iconos
 - arreglar portrait mode
 
 # JS
-- FIX GAME TIME ZEROS
++ FIX GAME TIME ZEROS
 - slides entre secciones
++ FIX SCHEDULE
+
+# SCHEDULE
+- GROUP GAMES BY DAY
+- HIDE PAST EVENTS
 

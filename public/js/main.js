@@ -194,6 +194,8 @@ function createSchedule(data, stad) {
 
     $(this).next().toggle();
     $(this).siblings(".stadiumDiv").toggle();
+    $(this).siblings(".adressDiv").hide();
+    
 
 
   });
@@ -204,8 +206,6 @@ function createSchedule(data, stad) {
     $(".gameArrow").toggleClass('gameArrowReset');
 
   });
-
-
 
 }
 
@@ -218,12 +218,78 @@ function createTeamsInfo(game, creaShowedInfo) {
   teams.setAttribute("class", "gameTeams");
 
   var firstTeam = document.createElement("p");
-  firstTeam.setAttribute("class", "team1");
   firstTeam.innerHTML = team1;
+//  firstTeam.setAttribute("class", "team1");
+
+  switch (team1) {
+
+    case "U1":
+
+      firstTeam.setAttribute("class", "U1");
+      break;
+
+    case "U2":
+
+      firstTeam.setAttribute("class", "U2");
+      break;
+
+    case "U3":
+
+      firstTeam.setAttribute("class", "U3");
+      break;
+
+    case "U4":
+
+      firstTeam.setAttribute("class", "U4");
+      break;
+
+    case "U5":
+
+      firstTeam.setAttribute("class", "U5");
+      break;
+
+    case "U6":
+
+      firstTeam.setAttribute("class", "U6");
+      break;
+  }
+
 
   var secondTeam = document.createElement("p");
-  secondTeam.setAttribute("class", "team2");
   secondTeam.innerHTML = team2;
+//  secondTeam.setAttribute("class", "team2");
+  switch (team2) {
+
+    case "U1":
+
+      secondTeam.setAttribute("class", "U1");
+      break;
+
+    case "U2":
+
+      secondTeam.setAttribute("class", "U2");
+      break;
+
+    case "U3":
+
+      secondTeam.setAttribute("class", "U3");
+      break;
+
+    case "U4":
+
+      secondTeam.setAttribute("class", "U4");
+      break;
+
+    case "U5":
+
+      secondTeam.setAttribute("class", "U5");
+      break;
+
+    case "U6":
+
+      secondTeam.setAttribute("class", "U6");
+      break;
+  }
 
   var VS = document.createElement("p");
   VS.setAttribute("class", "vs");
@@ -441,7 +507,7 @@ function moreFieldInfo(thatField, creaGame) {
 
   directionA.appendChild(stadiumStreet);
   directionA.appendChild(stadiumLocality);
-  
+
   directionDiv.appendChild(directionA);
 
   var placeHolderA = document.createElement("a");
