@@ -248,7 +248,8 @@ header {
   color: #686868;
 }
 
-.new, .event {
+.new,
+.event {
   display: flex;
   flex-flow: column nowrap;
   /*  border: 1px solid #686868;*/
@@ -261,7 +262,8 @@ header {
   background-color: white;
 }
 
-.newsTitle, .eventDate{
+.newsTitle,
+.eventDate {
   text-align: left;
   font-size: 8vw;
   margin: 10px 20px;
@@ -270,7 +272,8 @@ header {
   padding: 10px;
 }
 
-.newsDate, .eventTitle {
+.newsDate,
+.eventTitle {
   font-size: .75rem;
   text-align: right;
   margin: 10px 20px;
@@ -278,7 +281,7 @@ header {
   color: #686868;
 }
 
-.eventTitle{
+.eventTitle {
   font-size: 1.15rem;
 }
 
@@ -293,7 +296,8 @@ header {
   display: none;
 }
 
-.newsContent, .eventContent {
+.newsContent,
+.eventContent {
   font-size: 5.5vw;
   display: none;
   border-top: 1px solid #686868;
@@ -304,74 +308,117 @@ header {
   color: #686868;
 }
 
+
 /* SCHEDULE */
 
 #schedule {
   display: none;
 }
 
-.game{
+.game {
   width: 80%;
   height: auto;
   display: flex;
   flex-flow: column nowrap;
   /*  border: 1px solid #686868;*/
   border-radius: .25rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 10px auto;
   font-family: "arial";
   background-color: white;
 }
 
-.gameDate{
+.gameDate {
   display: flex;
   flex-flow: row nowrap;
   background: #686868;
   padding: 10px 20px;
 }
 
-.gameDay, .gameMonth{
+.gameDay,
+.gameMonth {
   color: white;
   font-weight: bold;
   font-size: 1rem;
-  
 }
 
-.gameDay{
+.gameDay {
   margin: auto 5px;
 }
 
-.gameTeams{
+.gameTeams {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   margin: 10px 20px;
 }
 
-.team1, .team2, .vs{
+.team1,
+.team2,
+.vs {
   margin: auto 5px;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-.gameTime{
-  
-    margin: 10px 20px;
-
-  
+.gameTime,
+.gameStadium {
+  margin: 10px 20px;
 }
 
-.field{
-    margin: 10px 20px;
-/*    border-top: 1px solid #686868;*/
-
-
+.timeIcon,
+.stadiumIcon {
+  width: 35px;
+  height: 35px;
 }
 
-.adressDiv{
-/*  display: none;*/
-      margin: 10px 20px;
-    border-top: 1px solid #686868;
-
+.timeDiv,
+.stadiumDiv {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
 }
+
+.timeDiv {
+  margin: 10px 20px;
+}
+
+.stadiumDiv {
+  margin-bottom: 10px;
+}
+
+.fieldDiv {
+  margin: 10px 20px;
+  /*    border-top: 1px solid #686868;*/
+}
+
+.adressDiv {
+  /*  display: none;*/
+  /*  margin: 10px 20px;*/
+  border-top: 1px solid #686868;
+}
+
+.stadiumStreet,
+.stadiumLocality {
+  margin: 10px;
+  5px;
+  font-weight: bold;
+  /*  font-size: 1.5rem;*/
+}
+
+.gameArrow {
+  font-size: 1.25rem;
+  font-weight: bold;
+  transform: rotate(270deg);
+}
+
+.gameArrowReset {
+  font-size: 1.25rem;
+  font-weight: bold;
+  transform: rotate(90deg);
+}
+
 
 /* CONTACT */
 

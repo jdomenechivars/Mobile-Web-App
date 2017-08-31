@@ -2,12 +2,12 @@ $(document).ready(function () {
 
 
   $(".sett").click(function () {
-    $(".settingsPanelShadow").show();
+    $(".settingsPanelShadow").show("slide");
   });
 
 
   $(".settingsPanelShadow").click(function () {
-    $(".settingsPanelShadow").hide();
+    $(".settingsPanelShadow").hide("slide");
   });
 
 
@@ -39,6 +39,7 @@ $(document).ready(function () {
     $('#contact').hide();
 
   });
+
 
   $(".schedule").click(function () {
 
@@ -138,14 +139,22 @@ $(document).ready(function () {
 });
 
 
-$.getJSON("json/schedule.json", function (data) {
+$.getJSON("json/stadiums.json", function (data2) {
 
-  createSchedule(data);
+  var stad = data2;
+
+
+  $.getJSON("json/schedule.json", function (data) {
+
+    createSchedule(data, stad);
+
+  });
 
 });
 
 
-function createSchedule(data) {
+
+function createSchedule(data, stad) {
 
   var matches = data.matches;
 
@@ -160,26 +169,47 @@ function createSchedule(data) {
     var creaGame = document.createElement("div");
     creaGame.setAttribute("class", "game");
 
-    createDateInfo(game, creaGame);
-    createTeamsInfo(game, creaGame);
+    var creaShowedInfo = document.createElement("div");
+    creaShowedInfo.setAttribute("class", "showedInfo");
+
+    creaGame.appendChild(creaShowedInfo);
+
+
+    createDateInfo(game, creaShowedInfo);
+    createTeamsInfo(game, creaShowedInfo);
     createTimeInfo(game, creaGame);
-    createFieldInfo(game, creaGame);
-    
-      $(".game").click(function () {
-
-    $(this).children(".field").toggle();
-    $(this).children(".gameTime").toggle();
-
-
-  });
+    createFieldInfo(game, creaGame, stad);
 
     Schedule.append(creaGame);
 
   }
 
+  $(".timeDiv").hide();
+  $(".fieldDiv").hide();
+  $(".adressDiv").hide();
+
+
+
+  $(".showedInfo").click(function () {
+
+    $(this).next().toggle();
+    $(this).siblings(".fieldDiv").toggle();
+
+
+  });
+
+  $(".fieldDiv").click(function () {
+
+    $(this).children(".adressDiv").toggle();
+    $(".gameArrow").toggleClass('gameArrowReset');
+    
+  });
+
+
+
 }
 
-function createTeamsInfo(game, creaGame) {
+function createTeamsInfo(game, creaShowedInfo) {
 
   var team1 = game.teams.team1;
   var team2 = game.teams.team2;
@@ -202,11 +232,11 @@ function createTeamsInfo(game, creaGame) {
   teams.appendChild(firstTeam);
   teams.appendChild(VS);
   teams.appendChild(secondTeam);
-  creaGame.appendChild(teams);
+  creaShowedInfo.appendChild(teams);
 
 }
 
-function createDateInfo(game, creaGame) {
+function createDateInfo(game, creaShowedInfo) {
 
   var day = game.date.day;
 
@@ -291,7 +321,7 @@ function createDateInfo(game, creaGame) {
 
   date.appendChild(monthP);
   date.appendChild(dayP);
-  creaGame.appendChild(date);
+  creaShowedInfo.appendChild(date);
 
 }
 
@@ -301,8 +331,18 @@ function createTimeInfo(game, creaGame) {
   var minuts = game.date.time.minuts;
   var period = game.date.time.period;
 
+  var timeDiv = document.createElement("div");
+  timeDiv.setAttribute("class", "timeDiv");
+
   var time = hour + ":" + minuts;
-  var timePeriod = "Time: " + time + " " + period;
+  var timePeriod = time + " " + period;
+
+  var timeIcon = document.createElement("img");
+  timeIcon.setAttribute("class", "timeIcon");
+  timeIcon.setAttribute("src", "styles/icons/time.png");
+  timeIcon.setAttribute("alt", "timeIcon");
+  timeDiv.appendChild(timeIcon);
+
 
   var timeP = document.createElement("p");
   timeP.setAttribute("class", "gameHour")
@@ -312,7 +352,8 @@ function createTimeInfo(game, creaGame) {
   gameTime.setAttribute("class", "gameTime");
   timeP.innerHTML = timePeriod;
   gameTime.appendChild(timeP);
-  creaGame.appendChild(gameTime);
+  timeDiv.appendChild(gameTime);
+  creaGame.appendChild(timeDiv);
 
 }
 
@@ -321,34 +362,48 @@ function createFieldInfo(game, creaGame, stad) {
   var field = game.location;
 
   var fieldDiv = document.createElement("div");
-  fieldDiv.setAttribute("class", "field");
+  fieldDiv.setAttribute("class", "fieldDiv");
 
-  $.getJSON("json/stadiums.json", function (stad) {
+  var stadiums = stad.stadiums;
 
-    var stadiums = stad.stadiums;
+  for (j = 0; j < stadiums.length; j++) {
 
-    for (j = 0; j < stadiums.length; j++) {
+    var eachStadium = stadiums[j];
 
-      var eachStadium = stadiums[j];
+    if (field == stadiums[j].short) {
 
-      if (field == stadiums[j].short) {
+      var thatField = stadiums[j];
 
-        var thatField = stadiums[j];
+      var stadiumDiv = document.createElement("div");
+      stadiumDiv.setAttribute("class", "stadiumDiv");
 
-        var fieldP = document.createElement("p");
-        fieldP.setAttribute("class", "gameStadium");
-        fieldP.innerHTML = thatField.name;
-        fieldDiv.appendChild(fieldP);
+      var stadiumIcon = document.createElement("img");
+      stadiumIcon.setAttribute("class", "stadiumIcon");
+      stadiumIcon.setAttribute("src", "styles/icons/stadium.png");
+      stadiumIcon.setAttribute("alt", "stadiumIcon");
+      stadiumDiv.appendChild(stadiumIcon);
 
-        moreFieldInfo(thatField, fieldDiv);
 
-      }
+      var fieldP = document.createElement("p");
+      fieldP.setAttribute("class", "gameStadium");
+      fieldP.innerHTML = thatField.name;
+      stadiumDiv.appendChild(fieldP);
 
-      creaGame.appendChild(fieldDiv);
+      var arrow = document.createElement("p");
+      arrow.setAttribute("class", "gameArrow");
+      arrow.innerHTML = "‹";
+      stadiumDiv.appendChild(arrow);
+
+      fieldDiv.appendChild(stadiumDiv);
+
+      moreFieldInfo(thatField, fieldDiv);
 
     }
 
-  });
+    creaGame.appendChild(fieldDiv);
+
+  }
+
 
 }
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+<button id="login">login!</button>
+
+<button id="create-post">Create post!</button>
+
+<input type="text" id="title" placeholder="title">
+<input type="text" id="body" placeholder="Your message...">
+
+<p>POSTS:</p>
+<div id="posts"></div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCQeELNjIUjlz2K8tJO7EYIFgXqK6Oa9ag",
+      authDomain: "nysl-app-a81ca.firebaseapp.com",
+      databaseURL: "https://nysl-app-a81ca.firebaseio.com",
+      projectId: "nysl-app-a81ca",
+      storageBucket: "nysl-app-a81ca.appspot.com",
+      messagingSenderId: "1056916219701"
+    };
+    firebase.initializeApp(config);
+
+  </script>
+
+  <script src="raul.js"></script>
+</body>
+
+</html>
