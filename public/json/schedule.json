@@ -13,7 +13,11 @@
         "period": "am"
       }
     },
-    "location": "Katzenmaier"
+    "location": "Katzenmaier",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U3",
@@ -28,7 +32,11 @@
         "period": "pm"
       }
     },
-    "location": "Greenbay"
+    "location": "Greenbay",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U5",
@@ -43,7 +51,11 @@
         "period": "am"
       }
     },
-    "location": "Howard"
+    "location": "Howard",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U6",
@@ -58,7 +70,11 @@
         "period": "am"
       }
     },
-    "location": "Howard"
+    "location": "Howard",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U2",
@@ -73,7 +89,11 @@
         "period": "am"
       }
     },
-    "location": "North"
+    "location": "North",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U3",
@@ -88,7 +108,11 @@
         "period": "pm"
       }
     },
-    "location": "Katzenmaier"
+    "location": "Katzenmaier",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U1",
@@ -103,7 +127,11 @@
         "period": "am"
       }
     },
-    "location": "South"
+    "location": "South",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U2",
@@ -118,7 +146,11 @@
         "period": "pm"
       }
     },
-    "location": "Howard"
+    "location": "Howard",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U2",
@@ -133,7 +165,11 @@
         "period": "am"
       }
     },
-    "location": "Greenbay"
+    "location": "Greenbay",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U2",
@@ -148,7 +184,11 @@
         "period": "am"
       }
     },
-    "location": "Majorie"
+    "location": "Majorie",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U1",
@@ -163,7 +203,11 @@
         "period": "pm"
       }
     },
-    "location": "South"
+    "location": "South",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U3",
@@ -178,7 +222,11 @@
         "period": "am"
       }
     },
-    "location": "Howard"
+    "location": "Howard",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U5",
@@ -193,7 +241,11 @@
         "period": "pm"
       }
     },
-    "location": "Greenbay"
+    "location": "Greenbay",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U6",
@@ -208,7 +260,11 @@
         "period": "am"
       }
     },
-    "location": "North"
+    "location": "North",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U2",
@@ -223,7 +279,11 @@
         "period": "pm"
       }
     },
-    "location": "Katzenmaier"
+    "location": "Katzenmaier",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U3",
@@ -238,7 +298,11 @@
         "period": "am"
       }
     },
-    "location": "Katzenmaier"
+    "location": "Katzenmaier",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U5",
@@ -253,7 +317,11 @@
         "period": "pm"
       }
     },
-    "location": "Howard"
+    "location": "Howard",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
 	}, {
     "teams": {
       "team1": "U2",
@@ -268,6 +336,67 @@
         "period": "am"
       }
     },
-    "location": "South"
+    "location": "South",
+    "scores": {
+      "team1": "-",
+      "team2": "-"
+    }
+	}, {
+    "teams": {
+      "team1": "U6",
+      "team2": "U3"
+    },
+    "date": {
+      "month": "01",
+      "day": "01",
+      "time": {
+        "hour": "09",
+        "minuts": "30",
+        "period": "am"
+      }
+    },
+    "location": "Howard",
+    "scores": {
+      "team1": "5", 
+      "team2": "9"
+    }
+	}, {
+    "teams": {
+      "team1": "U2",
+      "team2": "U3"
+    },
+    "date": {
+      "month": "08",
+      "day": "31",
+      "time": {
+        "hour": "09",
+        "minuts": "30",
+        "period": "am"
+      }
+    },
+    "location": "Howard",
+    "scores": {
+      "team1": "24", 
+      "team2": "9"
+    }
+	}, {
+    "teams": {
+      "team1": "U1",
+      "team2": "U2"
+    },
+    "date": {
+      "month": "08",
+      "day": "30",
+      "time": {
+        "hour": "09",
+        "minuts": "30",
+        "period": "am"
+      }
+    },
+    "location": "Howard",
+    "scores": {
+      "team1": "5", 
+      "team2": "40"
+    }
 	}]
 }

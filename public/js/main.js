@@ -1,3 +1,5 @@
+// BUTTONS BEHAIVOR //
+
 $(document).ready(function () {
 
 
@@ -54,7 +56,6 @@ $(document).ready(function () {
     $("#chat").hide();
     $('#contact').hide();
 
-    //    createSchedule();
 
   });
 
@@ -138,6 +139,7 @@ $(document).ready(function () {
 
 });
 
+// SCHEDULE PAGE CREATOR //
 
 $.getJSON("json/stadiums.json", function (data2) {
 
@@ -151,8 +153,6 @@ $.getJSON("json/stadiums.json", function (data2) {
   });
 
 });
-
-
 
 function createSchedule(data, stad) {
 
@@ -195,7 +195,7 @@ function createSchedule(data, stad) {
     $(this).next().toggle();
     $(this).siblings(".stadiumDiv").toggle();
     $(this).siblings(".adressDiv").hide();
-    
+
 
 
   });
@@ -219,7 +219,7 @@ function createTeamsInfo(game, creaShowedInfo) {
 
   var firstTeam = document.createElement("p");
   firstTeam.innerHTML = team1;
-//  firstTeam.setAttribute("class", "team1");
+  //  firstTeam.setAttribute("class", "team1");
 
   switch (team1) {
 
@@ -257,7 +257,7 @@ function createTeamsInfo(game, creaShowedInfo) {
 
   var secondTeam = document.createElement("p");
   secondTeam.innerHTML = team2;
-//  secondTeam.setAttribute("class", "team2");
+  //  secondTeam.setAttribute("class", "team2");
   switch (team2) {
 
     case "U1":
@@ -525,5 +525,259 @@ function moreFieldInfo(thatField, creaGame) {
   adressDiv.appendChild(placeHolderDiv);
   adressDiv.appendChild(directionDiv);
   creaGame.appendChild(adressDiv);
+
+}
+
+// SCORES PAGE CREATOR //
+
+$.getJSON("json/schedule.json", function (data) {
+
+  createScores(data);
+
+});
+
+function createScores(data) {
+
+  var scores = document.getElementById("scores");
+
+  $("#scores").empty();
+
+  var gamesPlayed = document.createElement("div");
+  gamesPlayed.setAttribute("class", "gamesPlayed");
+  scores.appendChild(gamesPlayed);
+
+  var gamesUpcoming = document.createElement("div");
+  gamesUpcoming.setAttribute("class", "gamesUpcoming");
+  scores.appendChild(gamesUpcoming);
+
+  var matches = data.matches;
+
+  matches.sort(compare);
+
+  var playedArray = [];
+
+  var upcomingArray = [];
+
+  var month = obtainMonth();
+
+  var day = obtainDayNumber();
+
+  for (z = 0; z < matches.length; z++) {
+
+    var game = matches[z];
+
+    if (parseFloat(game.date.month) < month) {
+
+      playedArray.push(game);
+
+    } else if (parseFloat(game.date.month) == month && parseFloat(game.date.day) < day) {
+
+      playedArray.push(game);
+
+    } else {
+
+      upcomingArray.push(game);
+
+    }
+
+  }
+
+  createPlayedMatches(playedArray, gamesPlayed);
+  createUpcomingMatches(upcomingArray, gamesUpcoming);
+
+}
+
+function createPlayedMatches(playedArray, gamesPlayed) {
+
+  var playedTitle = document.createElement("div");
+  playedTitle.setAttribute("class", "playedTitle");
+  gamesPlayed.appendChild(playedTitle);
+
+  var playedTitleP = document.createElement("p");
+  playedTitleP.setAttribute("class", "played");
+  playedTitleP.innerHTML = "Played Games Scores:"
+  playedTitle.appendChild(playedTitleP);
+
+
+  for (p = 0; p < playedArray.length; p++) {
+
+    var thisMatch = playedArray[p];
+
+    var match = document.createElement("div");
+    match.setAttribute("class", "matchPlayed");
+
+    createScoreDate(thisMatch, match);
+
+    var teamA = document.createElement("div");
+    teamA.setAttribute("class", "teamAPlayedDiv");
+
+    var teamAP = document.createElement("p");
+    teamAP.setAttribute("class", "teamAPlayed");
+
+    teamAP.innerHTML = thisMatch.teams.team1;
+    teamA.appendChild(teamAP);
+    match.appendChild(teamA);
+
+    var playedScore = document.createElement("div");
+    playedScore.setAttribute("class", "playedScoreDiv");
+
+    var score1 = document.createElement("p");
+    score1.setAttribute("class", "score1");
+    score1.innerHTML = thisMatch.scores.team1;
+    playedScore.appendChild(score1);
+
+    var dash = document.createElement("p");
+    dash.setAttribute("class", "dash");
+    dash.innerHTML = "-";
+    playedScore.appendChild(dash);
+
+    var score2 = document.createElement("p");
+    score2.setAttribute("class", "score2");
+    score2.innerHTML = thisMatch.scores.team2;
+    playedScore.appendChild(score2);
+
+    match.appendChild(playedScore);
+
+    var teamB = document.createElement("div");
+    teamB.setAttribute("class", "teamBPlayedDiv");
+
+    var teamBP = document.createElement("p");
+    teamBP.setAttribute("class", "teamBPlayed");
+
+    teamBP.innerHTML = thisMatch.teams.team2;
+    teamB.appendChild(teamBP);
+    match.appendChild(teamB);
+
+    gamesPlayed.appendChild(match);
+  }
+
+
+}
+
+function createUpcomingMatches(upcomingArray, gamesUpcoming) {
+
+  var upcomingTitle = document.createElement("div");
+  upcomingTitle.setAttribute("class", "upcomingTitle");
+  gamesUpcoming.appendChild(upcomingTitle);
+
+  var upcomingTitleP = document.createElement("p");
+  upcomingTitleP.setAttribute("class", "upcoming");
+  upcomingTitleP.innerHTML = "Upcoming Games:"
+  upcomingTitle.appendChild(upcomingTitleP);
+
+  for (t = 0; t < upcomingArray.length; t++) {
+
+    var thisMatch = upcomingArray[t];
+
+    var match = document.createElement("div");
+    match.setAttribute("class", "matchUpcoming");
+
+    createScoreDate(thisMatch, match);
+
+    var teamA = document.createElement("div");
+    teamA.setAttribute("class", "teamAUpcomingDiv");
+
+    var teamAP = document.createElement("p");
+    teamAP.setAttribute("class", "teamAUpcoming");
+
+    teamAP.innerHTML = thisMatch.teams.team1;
+    teamA.appendChild(teamAP);
+    match.appendChild(teamA);
+
+    var upcomingScore = document.createElement("div");
+    upcomingScore.setAttribute("class", "upcomingScoreDiv");
+
+    var score1 = document.createElement("p");
+    score1.setAttribute("class", "score1");
+    score1.innerHTML = thisMatch.scores.team1;
+    upcomingScore.appendChild(score1);
+
+    var dash = document.createElement("p");
+    dash.setAttribute("class", "dash");
+    dash.innerHTML = "-";
+    upcomingScore.appendChild(dash);
+
+    var score2 = document.createElement("p");
+    score2.setAttribute("class", "score2");
+    score2.innerHTML = thisMatch.scores.team2;
+    upcomingScore.appendChild(score2);
+
+    match.appendChild(upcomingScore);
+
+    var teamB = document.createElement("div");
+    teamB.setAttribute("class", "teamBUpcomingDiv");
+
+    var teamBP = document.createElement("p");
+    teamBP.setAttribute("class", "teamBUpcoming");
+
+    teamBP.innerHTML = thisMatch.teams.team2;
+    teamB.appendChild(teamBP);
+    match.appendChild(teamB);
+
+    gamesUpcoming.appendChild(match);
+
+
+  }
+
+
+}
+
+function createScoreDate(thisMatch, match) {
+
+  var day = thisMatch.date.day;
+
+  var month = thisMatch.date.month;
+
+  var dateTime = month + "-" + day;
+
+  var date = document.createElement("time");
+  date.setAttribute("datetime", dateTime);
+  date.setAttribute("class", "scoreDate");
+
+  var monthP = document.createElement("p");
+  monthP.setAttribute("class", "scoreMonth");
+  monthP.innerHTML = month;
+  
+    var blackDash = document.createElement("p");
+    blackDash.setAttribute("class", "blackDash");
+    blackDash.innerHTML = "-";
+
+  var dayP = document.createElement("p");
+  dayP.setAttribute("class", "scoreDay");
+  dayP.innerHTML = day;
+
+  date.appendChild(monthP);
+  date.appendChild(blackDash);
+  date.appendChild(dayP);
+  match.appendChild(date);
+
+}
+
+function compare(a, b) {
+
+  if (parseFloat(a.date.month) < parseFloat(b.date.month))
+    return -1;
+  if (parseFloat(a.date.month) > parseFloat(b.date.month))
+    return 1;
+  return 0;
+
+}
+
+function obtainMonth() {
+
+  var d = new Date();
+
+  var month = d.getMonth();
+
+  return (month + 1);
+
+}
+
+function obtainDayNumber() {
+
+  var d = new Date();
+  var dayNumber = d.getDate()
+
+  return dayNumber;
 
 }
