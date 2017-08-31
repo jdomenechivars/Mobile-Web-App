@@ -368,41 +368,28 @@ header {
 
 .timeIcon,
 .stadiumIcon,
-.placeIcon{
+.placeIcon {
   width: 35px;
   height: 35px;
 }
 
 .timeDiv,
-.stadiumDiv {
+.stadiumDiv,
+.adressDiv {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-}
+    margin: 10px 20px;
 
-.timeDiv {
-  margin: 10px 20px;
-}
-
-.stadiumDiv {
-  margin-bottom: 10px;
-}
-
-.fieldDiv {
-  margin: 10px 20px;
-  /*    border-top: 1px solid #686868;*/
 }
 
 .adressDiv {
-  /*  display: none;*/
-  /*  margin: 10px 20px;*/
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 10px;
   border-top: 1px solid #686868;
+}
+
+.directionA, .directionA:hover{
+  text-decoration: none;
 }
 
 .stadiumStreet,

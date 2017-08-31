@@ -185,7 +185,7 @@ function createSchedule(data, stad) {
   }
 
   $(".timeDiv").hide();
-  $(".fieldDiv").hide();
+  $(".stadiumDiv").hide();
   $(".adressDiv").hide();
 
 
@@ -193,14 +193,14 @@ function createSchedule(data, stad) {
   $(".showedInfo").click(function () {
 
     $(this).next().toggle();
-    $(this).siblings(".fieldDiv").toggle();
+    $(this).siblings(".stadiumDiv").toggle();
 
 
   });
 
-  $(".fieldDiv").click(function () {
+  $(".stadiumDiv").click(function () {
 
-    $(this).children(".adressDiv").toggle();
+    $(this).siblings(".adressDiv").toggle();
     $(".gameArrow").toggleClass('gameArrowReset');
 
   });
@@ -361,8 +361,8 @@ function createFieldInfo(game, creaGame, stad) {
 
   var field = game.location;
 
-  var fieldDiv = document.createElement("div");
-  fieldDiv.setAttribute("class", "fieldDiv");
+  //  var fieldDiv = document.createElement("div");
+  //  fieldDiv.setAttribute("class", "fieldDiv");
 
   var stadiums = stad.stadiums;
 
@@ -394,20 +394,17 @@ function createFieldInfo(game, creaGame, stad) {
       arrow.innerHTML = "‹";
       stadiumDiv.appendChild(arrow);
 
-      fieldDiv.appendChild(stadiumDiv);
+      creaGame.appendChild(stadiumDiv);
 
-      moreFieldInfo(thatField, fieldDiv);
+      moreFieldInfo(thatField, creaGame);
 
     }
 
-    creaGame.appendChild(fieldDiv);
-
   }
-
 
 }
 
-function moreFieldInfo(thatField, fieldDiv) {
+function moreFieldInfo(thatField, creaGame) {
 
   var stadiumInfo = document.createElement("div");
   stadiumInfo.setAttribute("class", "stadiumInfo");
@@ -417,7 +414,7 @@ function moreFieldInfo(thatField, fieldDiv) {
   var region = thatField.adress.region;
   var postalcode = thatField.adress.postalcode;
   var ubication = thatField.ubication;
-  
+
   var firstLineAdress = street + ","
   var secondLineAdress = locality + ", " + region + " " + postalcode;
 
@@ -430,6 +427,10 @@ function moreFieldInfo(thatField, fieldDiv) {
   var placeHolderDiv = document.createElement("div");
   placeHolderDiv.setAttribute("class", "placeHolderDiv");
 
+  var directionA = document.createElement("a");
+  directionA.setAttribute("class", "directionA");
+  directionA.setAttribute("href", ubication);
+
   var stadiumStreet = document.createElement("p");
   stadiumStreet.setAttribute("class", "stadiumStreet");
   stadiumStreet.innerHTML = firstLineAdress;
@@ -438,13 +439,15 @@ function moreFieldInfo(thatField, fieldDiv) {
   stadiumLocality.setAttribute("class", "stadiumLocality");
   stadiumLocality.innerHTML = secondLineAdress;
 
-  directionDiv.appendChild(stadiumStreet);
-  directionDiv.appendChild(stadiumLocality);
+  directionA.appendChild(stadiumStreet);
+  directionA.appendChild(stadiumLocality);
   
+  directionDiv.appendChild(directionA);
+
   var placeHolderA = document.createElement("a");
   placeHolderA.setAttribute("class", "placeHolderA");
   placeHolderA.setAttribute("href", ubication);
-  
+
 
   var placeHolderIcon = document.createElement("img");
   placeHolderIcon.setAttribute("class", "placeIcon");
@@ -455,6 +458,6 @@ function moreFieldInfo(thatField, fieldDiv) {
   placeHolderDiv.appendChild(placeHolderA);
   adressDiv.appendChild(placeHolderDiv);
   adressDiv.appendChild(directionDiv);
-  fieldDiv.appendChild(adressDiv);
+  creaGame.appendChild(adressDiv);
 
 }
