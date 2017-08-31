@@ -202,7 +202,7 @@ function createSchedule(data, stad) {
 
     $(this).children(".adressDiv").toggle();
     $(".gameArrow").toggleClass('gameArrowReset');
-    
+
   });
 
 
@@ -416,12 +416,19 @@ function moreFieldInfo(thatField, fieldDiv) {
   var locality = thatField.adress.locality;
   var region = thatField.adress.region;
   var postalcode = thatField.adress.postalcode;
-
+  var ubication = thatField.ubication;
+  
   var firstLineAdress = street + ","
   var secondLineAdress = locality + ", " + region + " " + postalcode;
 
   var adressDiv = document.createElement("div");
   adressDiv.setAttribute("class", "adressDiv");
+
+  var directionDiv = document.createElement("div");
+  directionDiv.setAttribute("class", "directionDiv");
+
+  var placeHolderDiv = document.createElement("div");
+  placeHolderDiv.setAttribute("class", "placeHolderDiv");
 
   var stadiumStreet = document.createElement("p");
   stadiumStreet.setAttribute("class", "stadiumStreet");
@@ -431,9 +438,23 @@ function moreFieldInfo(thatField, fieldDiv) {
   stadiumLocality.setAttribute("class", "stadiumLocality");
   stadiumLocality.innerHTML = secondLineAdress;
 
-  adressDiv.appendChild(stadiumStreet);
-  adressDiv.appendChild(stadiumLocality);
+  directionDiv.appendChild(stadiumStreet);
+  directionDiv.appendChild(stadiumLocality);
+  
+  var placeHolderA = document.createElement("a");
+  placeHolderA.setAttribute("class", "placeHolderA");
+  placeHolderA.setAttribute("href", ubication);
+  
 
+  var placeHolderIcon = document.createElement("img");
+  placeHolderIcon.setAttribute("class", "placeIcon");
+  placeHolderIcon.setAttribute("src", "styles/icons/placeholderfilled.png");
+  placeHolderIcon.setAttribute("alt", "placeHolderIcon");
+  placeHolderA.appendChild(placeHolderIcon);
+
+  placeHolderDiv.appendChild(placeHolderA);
+  adressDiv.appendChild(placeHolderDiv);
+  adressDiv.appendChild(directionDiv);
   fieldDiv.appendChild(adressDiv);
 
 }

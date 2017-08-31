@@ -367,7 +367,8 @@ header {
 }
 
 .timeIcon,
-.stadiumIcon {
+.stadiumIcon,
+.placeIcon{
   width: 35px;
   height: 35px;
 }
@@ -396,6 +397,11 @@ header {
 .adressDiv {
   /*  display: none;*/
   /*  margin: 10px 20px;*/
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 10px;
   border-top: 1px solid #686868;
 }
 
