@@ -261,8 +261,8 @@ header {
   color: #686868;
 }
 
-.nav-item{
-   display: flex;
+.nav-item {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -386,27 +386,33 @@ header {
 }
 
 .U1 {
-  color: #422650;
+  color: #FFFF8D;
+  text-shadow: 2px 2px 4px  black, 0 0 25px #686868, 0 0 5px grey;
 }
 
 .U2 {
-  color: #ac77c5;
+  color: #80D8FF;
+  text-shadow: 2px 2px 4px  black, 0 0 25px #686868, 0 0 5px grey;
 }
 
 .U3 {
-  color: #8949a6;
+  color: #A7FFEB;
+  text-shadow: 2px 2px 4px  black, 0 0 25px #686868, 0 0 5px grey;
 }
 
 .U4 {
-  color: #9351b3;
+  color: #FF8A80;
+  text-shadow: 2px 2px 4px  black, 0 0 25px #686868, 0 0 5px grey;
 }
 
 .U5 {
-  color: #7a4294;
+  color: #FFD180;
+  text-shadow: 2px 2px 4px  black, 0 0 25px #686868, 0 0 5px grey;
 }
 
 .U6 {
-  color: #8347a0;
+  color: #CCFF90;
+  text-shadow: 2px 2px 4px  black, 0 0 25px #686868, 0 0 5px grey;
 }
 
 .gameTime,
