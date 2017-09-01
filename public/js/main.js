@@ -127,22 +127,6 @@ $(document).ready(function () {
 
   });
 
-  $(".new").click(function () {
-
-    $(this).children(".newsContent").toggle();
-    $(this).children(".plusIcon").toggle();
-    $(this).children(".minusIcon").toggle();
-
-  });
-
-  $(".event").click(function () {
-
-    $(this).children(".eventContent").toggle();
-    $(this).children(".plusIcon").toggle();
-    $(this).children(".minusIcon").toggle();
-
-  });
-
   addFirebase();
 
 });
@@ -151,7 +135,7 @@ $(document).ready(function () {
 
 $.getJSON("json/news.json", function (data) {
 
-  createNews(data)
+  createNews(data);
 
 });
 
@@ -208,6 +192,14 @@ function createNews(data) {
 
   }
 
+  $(".new").click(function () {
+
+    $(this).children(".newsContent").toggle();
+    $(this).children(".plusIcon").toggle();
+    $(this).children(".minusIcon").toggle();
+
+  });
+
 }
 
 function createEvents(data) {
@@ -256,6 +248,16 @@ function createEvents(data) {
     home.append(article);
 
   }
+
+
+  $(".event").click(function () {
+
+    $(this).children(".eventContent").toggle();
+    $(this).children(".plusIcon").toggle();
+    $(this).children(".minusIcon").toggle();
+
+  });
+
 }
 
 function createNewsDate(eachNew, newsTime) {
