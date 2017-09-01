@@ -694,7 +694,7 @@ function createUpcomingMatches(upcomingArray, gamesUpcoming) {
 
     var dash = document.createElement("p");
     dash.setAttribute("class", "dash");
-    dash.innerHTML = "-";
+    dash.innerHTML = "/";
     upcomingScore.appendChild(dash);
 
     var score2 = document.createElement("p");

@@ -519,21 +519,22 @@ vs. {
 .teamBPlayedDiv,
 .teamAUpcomingDiv,
 .upcomingScoreDiv,
-.teamBUpcomingDiv{
+.teamBUpcomingDiv {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.scoreDate{
-    width: 20%;
+.scoreDate {
+  width: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.playedScoreDiv,.upcomingScoreDiv {
+.playedScoreDiv,
+.upcomingScoreDiv {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -551,8 +552,8 @@ vs. {
 
 .scoreDay,
 .scoreMonth,
-.blackDash{
-  color: #aaaaaa; 
+.blackDash {
+  color: #aaaaaa;
   font-size: .65rem;
   margin: auto 2px;
 }
