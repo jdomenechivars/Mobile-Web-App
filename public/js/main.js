@@ -6,14 +6,19 @@ $(document).ready(function () {
     $(".settingsPanelBox").animate({
       width: "toggle"
     });
+    $(".userPicDiv").fadeToggle(2000);
+    $(".userName").fadeToggle(2000);
+    $(".userMail").fadeToggle(2000);
   });
 
   $(".shadow").click(function () {
     $(".settingsPanelBox").animate({
       width: "toggle"
     });
+    $(".userPicDiv").fadeToggle("fast");
+    $(".userName").fadeToggle("fast");
+    $(".userMail").fadeToggle("fast");
   });
-
 
   $(".bigButtons").click(function () {
 
@@ -43,7 +48,6 @@ $(document).ready(function () {
     $('#contact').hide();
 
   });
-
 
   $(".schedule").click(function () {
 
@@ -153,7 +157,7 @@ $.getJSON("json/news.json", function (data) {
 
 $.getJSON("json/events.json", function (data) {
 
-    createEvents(data);
+  createEvents(data);
 
 });
 
@@ -984,21 +988,32 @@ function addFirebase() {
 
       var userMail = firebase.auth().currentUser.email;
 
+      $(".loginDiv").hide();
+      $(".logoutDiv").show();
+
       $(".userPic").attr("src", userPhoto);
 
       $(".userName").append(userName);
 
       $(".userMail").append(userMail);
 
+      $(".nolog").hide();
+      $(".loged").show();
 
 
     } else {
 
-      $(".userPic").attr("src", "");
+      $(".loginDiv").show();
+      $(".logoutDiv").hide();
+
+      $(".userPic").attr("src", "styles/icons/user.png");
 
       $(".userName").empty();
 
       $(".userMail").empty();
+
+      $(".nolog").show();
+      $(".loged").hide();
 
 
     }

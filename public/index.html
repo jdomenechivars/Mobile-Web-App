@@ -18,7 +18,14 @@
 
   <meta name="copyright" content="NYSL">
 
+  <!-- Robot searchers -->
+
   <meta name="robots" content="index,follow">
+
+  <!-- Cache -->
+
+  <meta http-equiv="cache-control" content="no-cache" />
+
 
   <!-- Title -->
 
@@ -96,7 +103,7 @@
       <div class="userProfile">
 
         <div class="userPicDiv">
-          <img class="userPic" alt="">
+          <img class="userPic" alt="user photo">
         </div>
 
         <div class="userName"></div>
@@ -106,10 +113,21 @@
 
       <div class="log">
 
-        <img class="logInIcon" src="styles/icons/login.png" alt="login icon">
+        <div class="loginDiv">
 
-        <button id="login">login!</button>
-        <button id="logout">logout!</button>
+          <img class="loginIcon" src="styles/icons/login.png" alt="login icon">
+
+          <button id="login">Log In</button>
+
+        </div>
+
+        <div class="logoutDiv">
+
+          <img class="logoutIcon" src="styles/icons/logout.png" alt="logout icon">
+
+          <button id="logout">Log Out</button>
+
+        </div>
 
       </div>
 
@@ -184,14 +202,26 @@
     <div id="chat">
 
 
-      <button id="create-post">Create post!</button>
+        <div class="nolog">
 
-      <input type="text" id="title" placeholder="title">
-      <input type="text" id="body" placeholder="Your message...">
+          <p class="nologText">We are sorry, but you do not have access to Chat.</p>
 
-      <p>POSTS:</p>
-      <div id="posts"></div>
+          <p class="nologText"> Please log in into the settings panel to enable the Chat.</p>
 
+        </div>
+
+        <div class="loged">
+
+
+          <button id="create-post">Create post!</button>
+
+          <input type="text" id="title" placeholder="title">
+          <input type="text" id="body" placeholder="Your message...">
+
+          <p>POSTS:</p>
+          <div id="posts"></div>
+
+        </div>
 
     </div>
 

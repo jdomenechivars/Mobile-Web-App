@@ -171,6 +171,7 @@ header {
 }
 
 .userPicDiv {
+  display: none;
   margin: 40px 20px 5px 20px;
   height: 100px;
   width: 100px;
@@ -178,13 +179,14 @@ header {
   border-radius: 100%;
 }
 
-.userPic{
+.userPic {
   height: 100px;
   width: 100px;
   border-radius: 100%;
 }
 
 .userName {
+  display: none;
   padding: 10px 20px 0px 20px;
   height: 50%;
   font-size: 6vw;
@@ -192,10 +194,46 @@ header {
 }
 
 .userMail {
-  padding: 0px 20px 10px 20px;;
+  display: none;
+  padding: 0px 20px 10px 20px;
+  ;
   height: 20%;
   font-size: 3vw;
   color: darkgrey;
+}
+
+.loginDiv,
+.logoutDiv {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #686868;
+  padding: 10px 20px;
+}
+
+.loginIcon,
+.logoutIcon {
+  height: 30px;
+  width: 30px;
+  margin: 5px;
+}
+
+#login,
+#logout,
+#login:focus,
+#logout:focus {
+  background: none;
+  text-decoration: none;
+  border: none;
+  font-size: 20px;
+  font-family: "Arial", sans-serif;
+  color: #686868;
+  outline: none;
+}
+
+.loginDiv:hover,
+.logoutDiv:hover {
+  background: #ebebeb;
 }
 
 
@@ -222,10 +260,6 @@ header {
 }
 
 #teams {
-  display: none;
-}
-
-#chat {
   display: none;
 }
 
@@ -578,6 +612,45 @@ vs. {
   color: #aaaaaa;
   font-size: .65rem;
   margin: auto 2px;
+}
+
+
+/* CHAT */
+
+#chat {
+  display: none;
+}
+
+.nolog {
+  display: flex;
+  flex-flow: column nowrap;
+  /*  border: 1px solid #686868;*/
+  border-radius: .25rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 80%;
+  height: auto;
+  margin: 25% auto;
+  font-family: "arial";
+  background-color: white;
+}
+
+.loged {
+  display: none;
+  border-radius: .25rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 80%;
+  height: auto;
+  margin: 10px auto;
+  font-family: "arial";
+  background-color: white;
+}
+
+.nologText {
+  font-size: 2rem;
+  text-align: center;
+  margin: 10px 20px;
+  padding: 10px;
+  color: #686868;
 }
 
 
