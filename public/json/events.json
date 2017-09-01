@@ -1,0 +1,31 @@
+{
+  "events": [{
+    "date": {
+      "month": "08",
+      "day": "04"
+    },
+    "title": "NYSL Fundraiser",
+    "content": "The season start with the annual NYSL Fundraiser dinner. Anyone interested in attending dinner should contact the organization."
+  }, {
+    "date": {
+      "month": "08",
+      "day": "16"
+    },
+    "title": "Season Kick-off: Meet the Teams",
+    "content": "An afternoon of snack so that the players know each other and enjoy before the start of the season."
+  }, {
+    "date": {
+      "month": "08",
+      "day": "12"
+    },
+    "title": "Distribution of new uniforms",
+    "content": "The uniforms will be delivered ath the NYSL office during all day."
+  }, {
+    "date": {
+      "month": "09",
+      "day": "01"
+    },
+    "title": "First Game of the Season",
+    "content": "Check Game Schedule for details"
+  }]
+}

@@ -1,0 +1,24 @@
+{
+  "news": [{
+    "date": {
+      "month": "06",
+      "day": "06"
+    },
+    "title": "Inscriptions",
+    "content": "Remember that all players must have sent the registration form duly completed."
+  }, {
+    "date": {
+      "month": "06",
+      "day": "20"
+    },
+    "title": "New arbitration rules",
+    "content": "The Dispute Resolution Chamber (DRC) is FIFA's deciding body that provides arbitration and dispute resolution on the basis of equal representation of players and clubs and an independent chairman. The DRC adjudicates on a regular basis in the presence of a varying composition of members."
+  }, {
+    "date": {
+      "month": "07",
+      "day": "15"
+    },
+    "title": "Google Donation",
+    "content": "Google has made a donation to the team of $ 1,000, this will be used to renew the sports equipment."
+  }]
+}

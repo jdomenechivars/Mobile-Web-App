@@ -2,14 +2,13 @@
 
 $(document).ready(function () {
 
-
   $(".sett").click(function () {
     $(".settingsPanelBox").animate({
       width: "toggle"
     });
   });
 
-  $(".shadow").on("tap", function () {
+  $(".shadow").click(function () {
     $(".settingsPanelBox").animate({
       width: "toggle"
     });
@@ -144,6 +143,192 @@ $(document).ready(function () {
 
 });
 
+// NEWS PAGE CREATOR //
+
+$.getJSON("json/news.json", function (data) {
+
+  createNews(data)
+
+});
+
+$.getJSON("json/events.json", function (data) {
+
+    createEvents(data);
+
+});
+
+function createNews(data) {
+
+  var home = $("#home");
+
+  var news = data.news;
+
+  news.sort(compare);
+
+  for (g = 0; g < news.length; g++) {
+
+    var eachNew = news[g];
+
+    var article = document.createElement("article");
+    article.setAttribute("class", "new");
+
+    var title = document.createElement("h2");
+    title.setAttribute("class", "newsTitle");
+    title.innerHTML = eachNew.title;
+    article.appendChild(title);
+
+    var newsTime = document.createElement("time");
+    newsTime.setAttribute("class", "newsDate");
+
+    createNewsDate(eachNew, newsTime);
+    article.appendChild(newsTime);
+
+    var plus = document.createElement("img");
+    plus.setAttribute("class", "plusIcon");
+    plus.setAttribute("src", "styles/icons/add-circular-button.png");
+    plus.setAttribute("alt", "plus icon");
+    article.appendChild(plus);
+
+    var minus = document.createElement("img");
+    minus.setAttribute("class", "minusIcon");
+    minus.setAttribute("src", "styles/icons/minus-circular-button.png");
+    minus.setAttribute("alt", "minus icon");
+    article.appendChild(minus);
+
+    var newsContent = document.createElement("p");
+    newsContent.setAttribute("class", "newsContent");
+    newsContent.innerHTML = eachNew.content;
+    article.appendChild(newsContent);
+
+    home.append(article);
+
+  }
+
+}
+
+function createEvents(data) {
+
+  var home = $("#profile");
+
+  var events = data.events;
+
+  events.sort(compare);
+
+  for (h = 0; h < events.length; h++) {
+
+    var eachNew = events[h];
+
+    var article = document.createElement("article");
+    article.setAttribute("class", "event");
+
+    var newsTime = document.createElement("time");
+    newsTime.setAttribute("class", "eventDate");
+
+    createNewsDate(eachNew, newsTime);
+    article.appendChild(newsTime);
+
+    var title = document.createElement("h2");
+    title.setAttribute("class", "eventTitle");
+    title.innerHTML = eachNew.title;
+    article.appendChild(title);
+
+    var plus = document.createElement("img");
+    plus.setAttribute("class", "plusIcon");
+    plus.setAttribute("src", "styles/icons/add-circular-button.png");
+    plus.setAttribute("alt", "plus icon");
+    article.appendChild(plus);
+
+    var minus = document.createElement("img");
+    minus.setAttribute("class", "minusIcon");
+    minus.setAttribute("src", "styles/icons/minus-circular-button.png");
+    minus.setAttribute("alt", "minus icon");
+    article.appendChild(minus);
+
+    var eventContent = document.createElement("p");
+    eventContent.setAttribute("class", "eventContent");
+    eventContent.innerHTML = eachNew.content;
+    article.appendChild(eventContent);
+
+    home.append(article);
+
+  }
+}
+
+function createNewsDate(eachNew, newsTime) {
+
+  var day = eachNew.date.day;
+
+  var month = eachNew.date.month;
+
+  switch (month) {
+
+    case "01":
+
+      month = "January"
+      break;
+
+    case "02":
+
+      month = "February"
+      break;
+
+    case "03":
+
+      month = "March"
+      break;
+
+    case "04":
+
+      month = "April"
+      break;
+
+    case "05":
+
+      month = "May"
+      break;
+
+    case "06":
+
+      month = "June"
+      break;
+
+    case "07":
+
+      month = "July"
+      break;
+
+    case "08":
+
+      month = "August"
+      break;
+
+    case "09":
+
+      month = "September"
+      break;
+    case "10":
+
+      month = "October"
+      break;
+
+    case "11":
+
+      month = "November"
+      break;
+
+    case "12":
+
+      month = "December"
+      break;
+
+  }
+
+  var dateNews = month + " " + day;
+
+  newsTime.innerHTML = dateNews;
+
+}
+
 // SCHEDULE PAGE CREATOR //
 
 $.getJSON("json/stadiums.json", function (data2) {
@@ -163,7 +348,7 @@ function createSchedule(data, stad) {
 
   var matches = data.matches;
 
-  var Schedule = $("#schedule");
+  var schedule = $("#schedule");
 
   $("#schedule").empty();
 
@@ -185,15 +370,13 @@ function createSchedule(data, stad) {
     createTimeInfo(game, creaGame);
     createFieldInfo(game, creaGame, stad);
 
-    Schedule.append(creaGame);
+    schedule.append(creaGame);
 
   }
 
   $(".timeDiv").hide();
   $(".stadiumDiv").hide();
   $(".adressDiv").hide();
-
-
 
   $(".showedInfo").click(function () {
 
@@ -789,7 +972,6 @@ function obtainDayNumber() {
 
 // CHAT //
 
-
 function addFirebase() {
 
   firebase.auth().onAuthStateChanged(function (user) {
@@ -853,8 +1035,6 @@ function logout() {
 
 }
 
-
-
 function writeNewPost() {
 
   var title = document.getElementById("title").value;
@@ -884,7 +1064,6 @@ function writeNewPost() {
 }
 
 function getPosts() {
-
 
   firebase.database().ref("match1").on("value", function (snapshot) {
 
