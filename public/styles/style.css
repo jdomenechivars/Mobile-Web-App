@@ -131,18 +131,28 @@ header {
 
 /* SETTINGS PANEL */
 
-.settingsPanelShadow {
-  display: none;
+.settingsPanelBox {
+  /*  display: none;*/
   position: absolute;
   right: 0;
   z-index: 10;
   width: 100%;
   height: 100%;
+}
+
+.shadow {
+  position: absolute;
+  left: 0;
+  width: 10%;
+  height: 100%;
+  border-right: 3px solid #686868;
   background: rgba(128, 128, 128, 0.5)
+/*  background: red;*/
 }
 
 .settingsPanel {
-  /*  display: none;*/
+  display: flex;
+  flex-flow: column nowrap;
   position: absolute;
   right: 0;
   width: 90%;
@@ -151,27 +161,19 @@ header {
 }
 
 .userProfile {
-  position: absolute;
-  top: 0;
   width: 100%;
   height: 30%;
   background: #390055;
 }
 
 .userPic {
-  position: absolute;
   height: 100px;
   width: 100px;
-  right: 8%;
-  top: 15%;
   background: green;
   border-radius: 100%;
 }
 
 .userName {
-  position: absolute;
-  right: 8%;
-  bottom: 15%;
   font-size: 6vw;
   color: white;
 }

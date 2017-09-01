@@ -4,12 +4,15 @@ $(document).ready(function () {
 
 
   $(".sett").click(function () {
-    $(".settingsPanelShadow").show("slide");
+    $(".settingsPanelBox").animate({
+      width: "toggle"
+    });
   });
 
-
-  $(".settingsPanelShadow").click(function () {
-    $(".settingsPanelShadow").hide("slide");
+  $(".shadow").on("tap", function () {
+    $(".settingsPanelBox").animate({
+      width: "toggle"
+    });
   });
 
 
@@ -136,6 +139,8 @@ $(document).ready(function () {
     $(this).children(".minusIcon").toggle();
 
   });
+
+  addFirebase();
 
 });
 
@@ -737,10 +742,10 @@ function createScoreDate(thisMatch, match) {
   var monthP = document.createElement("p");
   monthP.setAttribute("class", "scoreMonth");
   monthP.innerHTML = month;
-  
-    var blackDash = document.createElement("p");
-    blackDash.setAttribute("class", "blackDash");
-    blackDash.innerHTML = "-";
+
+  var blackDash = document.createElement("p");
+  blackDash.setAttribute("class", "blackDash");
+  blackDash.innerHTML = "-";
 
   var dayP = document.createElement("p");
   dayP.setAttribute("class", "scoreDay");
@@ -779,5 +784,126 @@ function obtainDayNumber() {
   var dayNumber = d.getDate()
 
   return dayNumber;
+
+}
+
+// CHAT //
+
+
+function addFirebase() {
+
+  firebase.auth().onAuthStateChanged(function (user) {
+
+    if (user) {
+
+      var userName = firebase.auth().currentUser.displayName;
+
+      var userPhoto = firebase.auth().currentUser.photoURL;
+
+      var userMail = firebase.auth().currentUser.email;
+
+      $(".userPic").attr("src", userPhoto);
+
+      $(".userName").append(userName);
+
+      $(".userMail").append(userMail);
+
+
+
+    } else {
+
+      $(".userPic").attr("src", "");
+
+      $(".userName").empty();
+
+      $(".userMail").empty();
+
+
+    }
+
+  });
+
+
+  getPosts();
+
+  document.getElementById("login").addEventListener("click", login);
+
+  document.getElementById("logout").addEventListener("click", logout);
+
+  document.getElementById("create-post").addEventListener("click", function () {
+    writeNewPost()
+  });
+
+}
+
+function login() {
+
+  var provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider);
+
+}
+
+function logout() {
+
+  firebase.auth().signOut().then(function () {
+
+    console.log("victor ya no es un capullo");
+
+  })
+
+}
+
+
+
+function writeNewPost() {
+
+  var title = document.getElementById("title").value;
+  var text = document.getElementById("body").value;
+
+  // A post entry.
+
+  var postData = {
+    title: title,
+    body: text,
+
+  };
+
+  // Get a key for a new Post.
+  var newPostKey = firebase.database().ref().child("match1").push().key;
+
+  var userName = firebase.auth().currentUser.displayName;
+
+  var updates = {};
+  updates["/match1/" + newPostKey] = postData;
+
+  document.getElementById("title").value = "";
+  document.getElementById("body").value = "";
+
+  return firebase.database().ref().update(updates);
+
+}
+
+function getPosts() {
+
+
+  firebase.database().ref("match1").on("value", function (snapshot) {
+
+    var logs = document.getElementById("posts");
+    logs.innerHTML = "";
+    var posts = snapshot.val();
+
+    for (var key in posts) {
+
+      var text = document.createElement("div");
+      var element = posts[key];
+
+      text.append(element.title);
+
+      text.append(element.body);
+
+      logs.append(text);
+
+    }
+  })
 
 }
