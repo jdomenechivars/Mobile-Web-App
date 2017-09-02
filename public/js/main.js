@@ -368,30 +368,28 @@ function createSchedule(data, stad) {
     var creaShowedInfo = document.createElement("div");
     creaShowedInfo.setAttribute("class", "showedInfo");
 
-    creaGame.appendChild(creaShowedInfo);
+    var creaHidedInfo = document.createElement("div");
+    creaHidedInfo.setAttribute("class", "hidedInfo");
 
+
+    creaGame.appendChild(creaShowedInfo);
+    creaGame.appendChild(creaHidedInfo);
 
     createDateInfo(game, creaShowedInfo);
     createTeamsInfo(game, creaShowedInfo);
-    createTimeInfo(game, creaGame);
-    createFieldInfo(game, creaGame, stad);
+    createTimeInfo(game, creaHidedInfo);
+    createFieldInfo(game, creaHidedInfo, stad);
 
     schedule.append(creaGame);
 
   }
 
-  $(".timeDiv").hide();
-  $(".stadiumDiv").hide();
+  $(".hidedInfo").hide();
   $(".adressDiv").hide();
 
   $(".showedInfo").click(function () {
-
     $(this).next().toggle();
-    $(this).siblings(".stadiumDiv").toggle();
-    $(this).siblings(".adressDiv").hide();
-
-
-
+    $(this).next().children(".adressDiv").hide();
   });
 
   $(".stadiumDiv").click(function () {
@@ -585,7 +583,7 @@ function createDateInfo(game, creaShowedInfo) {
 
 }
 
-function createTimeInfo(game, creaGame) {
+function createTimeInfo(game, creaHidedInfo) {
 
   var hour = game.date.time.hour;
   var minuts = game.date.time.minuts;
@@ -613,11 +611,11 @@ function createTimeInfo(game, creaGame) {
   timeP.innerHTML = timePeriod;
   gameTime.appendChild(timeP);
   timeDiv.appendChild(gameTime);
-  creaGame.appendChild(timeDiv);
+  creaHidedInfo.appendChild(timeDiv);
 
 }
 
-function createFieldInfo(game, creaGame, stad) {
+function createFieldInfo(game, creaHidedInfo, stad) {
 
   var field = game.location;
 
@@ -654,9 +652,9 @@ function createFieldInfo(game, creaGame, stad) {
       arrow.innerHTML = "‹";
       stadiumDiv.appendChild(arrow);
 
-      creaGame.appendChild(stadiumDiv);
+      creaHidedInfo.appendChild(stadiumDiv);
 
-      moreFieldInfo(thatField, creaGame);
+      moreFieldInfo(thatField, creaHidedInfo);
 
     }
 
@@ -664,7 +662,7 @@ function createFieldInfo(game, creaGame, stad) {
 
 }
 
-function moreFieldInfo(thatField, creaGame) {
+function moreFieldInfo(thatField, creaHidedInfo) {
 
   var stadiumInfo = document.createElement("div");
   stadiumInfo.setAttribute("class", "stadiumInfo");
@@ -718,7 +716,7 @@ function moreFieldInfo(thatField, creaGame) {
   placeHolderDiv.appendChild(placeHolderA);
   adressDiv.appendChild(placeHolderDiv);
   adressDiv.appendChild(directionDiv);
-  creaGame.appendChild(adressDiv);
+  creaHidedInfo.appendChild(adressDiv);
 
 }
 
