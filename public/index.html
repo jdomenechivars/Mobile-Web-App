@@ -130,7 +130,7 @@
         </div>
 
       </div>
-      
+
       <footer>
         <p class="powered">Powered by:</p>
         <p class="powered">Ubiqum & Joan Domènech</p>
@@ -207,26 +207,33 @@
     <div id="chat">
 
 
-        <div class="nolog">
+      <div class="nolog">
 
-          <p class="nologText">We are sorry, but you do not have access to Chat.</p>
+        <p class="nologText">We are sorry, but you do not have access to Chat.</p>
 
-          <p class="nologText"> Please, log in into the settings panel to enable the Chat.</p>
+        <p class="nologText"> Please, log in into the settings panel to enable the Chat.</p>
+
+      </div>
+
+      <div class="loged">
+        <div class="chat">
+
+<!--        <p>POSTS:</p>-->
+        <div id="posts"></div>
+
+
+        <input type="text" id="postTitle" placeholder="title">
+
+        <div class="write">
+          <input type="text" id="body" placeholder="Write here">
+
+          <button id="create-post"><img src="styles/icons/paper-plane.png" alt="send post" class="paperPlane"></button>
 
         </div>
-
-        <div class="loged">
-
-
-          <button id="create-post">Create post!</button>
-
-          <input type="text" id="title" placeholder="title">
-          <input type="text" id="body" placeholder="Your message...">
-
-          <p>POSTS:</p>
-          <div id="posts"></div>
-
+        
         </div>
+
+      </div>
 
     </div>
 

@@ -1054,7 +1054,7 @@ function logout() {
 
 function writeNewPost() {
 
-  var title = document.getElementById("title").value;
+  var title = document.getElementById("postTitle").value;
   var text = document.getElementById("body").value;
 
   // A post entry.
@@ -1073,7 +1073,7 @@ function writeNewPost() {
   var updates = {};
   updates["/match1/" + newPostKey] = postData;
 
-  document.getElementById("title").value = "";
+  document.getElementById("postTitle").value = "";
   document.getElementById("body").value = "";
 
   return firebase.database().ref().update(updates);
