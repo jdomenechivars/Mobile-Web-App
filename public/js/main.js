@@ -1,7 +1,7 @@
 // BUTTONS BEHAIVOR //
 
 $(document).ready(function () {
-  
+
   $("#scores").hide();
 
   $(".sett").click(function () {
@@ -87,7 +87,7 @@ $(document).ready(function () {
   $(".teams").click(function () {
 
     $("#title").empty();
-    $("#title").append("TEAMS");
+    $("#title").append("STADIUMS ");
 
     $("#mainBackground").hide();
     $("#news").hide();
@@ -722,6 +722,93 @@ function moreFieldInfo(thatField, creaHidedInfo) {
 
 }
 
+// STADIUMS PAGE CREATOR //
+
+$.getJSON("json/stadiums.json", function (data3) {
+
+  createStadiums(data3);
+
+})
+
+function createStadiums(data3) {
+
+  var teamsPage = $("#teams");
+
+  var stadiums = data3.stadiums;
+
+  stadiums.sort(compareName);
+
+  for (v = 0; v < stadiums.length; v++) {
+
+    var eachStadium = stadiums[v];
+
+    var stadiumDiv = document.createElement("div");
+    stadiumDiv.setAttribute("class", "stadiumDiv");
+    teamsPage.append(stadiumDiv);
+
+    var stadiumName = document.createElement("div");
+    stadiumName.setAttribute("class", "stadiumName");
+    stadiumDiv.appendChild(stadiumName);
+
+    var stadiumTitle = document.createElement("p");
+    stadiumTitle.setAttribute("class", "stadiumShort");
+    stadiumTitle.innerHTML = eachStadium.short;
+    stadiumName.appendChild(stadiumTitle);
+
+    var info = document.createElement("div");
+    info.setAttribute("class", "infoStadDiv");
+    stadiumDiv.appendChild(info);
+
+    var stadiumName = document.createElement("div");
+    stadiumName.setAttribute("class", "stadiumName");
+    stadiumName.innerHTML = eachStadium.name;
+    info.appendChild(stadiumName);
+
+    var facility = document.createElement("div");
+    facility.setAttribute("class", "faciltiy");
+    facility.innerHTML = "Facility type: " + eachStadium.facility;
+    info.appendChild(facility);
+
+    var street = eachStadium.adress.street;
+    var locality = eachStadium.adress.locality;
+    var region = eachStadium.adress.region;
+    var postalcode = eachStadium.adress.postalcode;
+    var ubication = eachStadium.ubication;
+
+    var firstLineAdress = street + ","
+    var secondLineAdress = locality + ", " + region + " " + postalcode;
+
+    var adressDiv = document.createElement("div");
+    adressDiv.setAttribute("class", "stadiumAdressDiv");
+
+    var stadiumStreet = document.createElement("p");
+    stadiumStreet.setAttribute("class", "stadStreet");
+    stadiumStreet.innerHTML = firstLineAdress;
+
+    var stadiumLocality = document.createElement("p");
+    stadiumLocality.setAttribute("class", "stadLocality");
+    stadiumLocality.innerHTML = secondLineAdress;
+
+    adressDiv.appendChild(stadiumStreet);
+    adressDiv.appendChild(stadiumLocality);
+    info.appendChild(adressDiv);
+    
+//    var iframe = document.createElement("iframe");
+//    iframe.setAttribute("src", eachStadium.iframe);
+//    iframe.setAttribute("width", "200");
+//    iframe.setAttribute("height", "200");
+//    iframe.setAttribute("frameborder", "0");
+//    iframe.setAttribute("stye", "border:0");
+//    iframe.setAttribute("allowfullscreen", "");
+//    info.appendChild(iframe);
+    
+
+
+  }
+
+}
+
+
 // SCORES PAGE CREATOR //
 
 $.getJSON("json/schedule.json", function (data) {
@@ -952,6 +1039,16 @@ function compare(a, b) {
   if (parseFloat(a.date.month) < parseFloat(b.date.month))
     return -1;
   if (parseFloat(a.date.month) > parseFloat(b.date.month))
+    return 1;
+  return 0;
+
+}
+
+function compareName(a, b) {
+
+  if (parseFloat(a.short) < parseFloat(b.short))
+    return -1;
+  if (parseFloat(a.short) > parseFloat(b.short))
     return 1;
   return 0;
 
