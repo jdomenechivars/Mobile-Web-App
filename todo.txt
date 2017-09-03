@@ -1,11 +1,11 @@
 + FIX ICONS MENU IPHONE
 
 # CSS
-- FIX BACKROUND BODY SIZE
-- FIX ICONS SIZE
++ FIX BACKROUND BODY SIZE
++ FIX ICONS SIZE
 + arreglar iconos
-- arreglar portrait mode
-- APLICAR ROOT
++ arreglar portrait mode
++ APLICAR ROOT
 
 # JS
 + FIX GAME TIME ZEROS

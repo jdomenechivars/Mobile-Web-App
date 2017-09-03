@@ -7,6 +7,11 @@
     color: #1a1a1a;
   }
   
+   :root {
+    --main-color: #7b4396;
+    --second-color: #686868;
+  }
+  
   html {
     /*  border: 5px solid pink;*/
     font-size: 16px;
@@ -47,7 +52,7 @@
     margin-top: -1px;
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: #7b4396;
+    background: var(--main-color);
     /*  background: white;*/
     /*  background: -webkit-linear-gradient(white, gainsboro);*/
     /*   For Safari 5.1 to 6.0 */
@@ -171,7 +176,7 @@
     margin: 40px 20px 5px 20px;
     height: 100px;
     width: 100px;
-    background: #686868;
+    background: var(--second-color);
     border-radius: 100%;
   }
   
@@ -203,14 +208,14 @@
     display: flex;
     align-items: center;
     width: 100%;
-    border-bottom: 1px solid #686868;
+    border-bottom: 1px solid var(--second-color);
     padding: 10px 20px;
   }
   
   .loginIcon,
   .logoutIcon {
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     margin: 5px;
   }
   
@@ -223,13 +228,32 @@
     border: none;
     font-size: 20px;
     font-family: "Arial", sans-serif;
-    color: #686868;
+    color: var(--second-color);
     outline: none;
   }
   
   .loginDiv:hover,
   .logoutDiv:hover {
     background: #ebebeb;
+  }
+  
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid var(--second-color);
+    padding: 5px 20px;
+  }
+  
+  .powered {
+    background: none;
+    text-decoration: none;
+    border: none;
+    padding: 5px;
+    font-size: .5rem;
+    font-family: "Arial", sans-serif;
+    color: var(--second-color);
+    outline: none;
   }
   /* CONTENT */
   
@@ -266,23 +290,19 @@
   .logo {
     max-width: 190px;
     max-height: 190px;
-    /*
-  width: auto;
-  height: 300vh;
-*/
     margin: 10px;
     /*  border: 3px solid white;*/
     border-radius: 100%;
     padding: 20px;
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: #7b4396;
+    background: var(--main-color);
   }
   /* NEWS */
   
   #news {
     display: none;
-    margin-bottom: 100px;
+    margin-bottom: 40%;
     /*  overflow: scroll;*/
   }
   
@@ -294,7 +314,7 @@
     width: 100%;
     height: 100%;
     font-weight: 500;
-    color: #7b4396;
+    color: var(--main-color);
   }
   
   .nav-tabs .nav-link {
@@ -302,7 +322,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    color: #686868;
+    color: var(--second-color);
   }
   
   .nav-item {
@@ -315,7 +335,7 @@
   .event {
     display: flex;
     flex-flow: column nowrap;
-    /*  border: 1px solid #686868;*/
+    /*  border: 1px solid var(--second-color);*/
     border-radius: .25rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 80%;
@@ -341,7 +361,7 @@
     text-align: right;
     margin: 10px 20px;
     padding: 10px;
-    color: #686868;
+    color: var(--second-color);
   }
   
   .eventTitle {
@@ -363,18 +383,18 @@
   .eventContent {
     font-size: 5.5vw;
     display: none;
-    border-top: 1px solid #686868;
+    border-top: 1px solid var(--second-color);
     text-align: justify;
     font-family: 'Inconsolata', monospace;
     margin: 10px 20px;
     padding: 10px;
-    color: #686868;
+    color: var(--second-color);
   }
   /* SCHEDULE */
   
   #schedule {
     display: none;
-    margin-bottom: 100px;
+    margin-bottom: 40%;
   }
   
   .game {
@@ -382,7 +402,7 @@
     height: auto;
     display: flex;
     flex-flow: column nowrap;
-    /*  border: 1px solid #686868;*/
+    /*  border: 1px solid var(--second-color);*/
     border-radius: .25rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 10px auto;
@@ -393,7 +413,7 @@
   .gameDate {
     display: flex;
     flex-flow: row nowrap;
-    background: #686868;
+    background: var(--second-color);
     padding: 10px 20px;
   }
   
@@ -433,32 +453,32 @@
   
   .U1 {
     color: #FFFF8D;
-    text-shadow: 2px 2px 4px black, 0 0 25px #686868, 0 0 5px grey;
+    text-shadow: 2px 2px 4px black, 0 0 25px var(--second-color), 0 0 5px grey;
   }
   
   .U2 {
     color: #80D8FF;
-    text-shadow: 2px 2px 4px black, 0 0 25px #686868, 0 0 5px grey;
+    text-shadow: 2px 2px 4px black, 0 0 25px var(--second-color), 0 0 5px grey;
   }
   
   .U3 {
     color: #A7FFEB;
-    text-shadow: 2px 2px 4px black, 0 0 25px #686868, 0 0 5px grey;
+    text-shadow: 2px 2px 4px black, 0 0 25px var(--second-color), 0 0 5px grey;
   }
   
   .U4 {
     color: #FF8A80;
-    text-shadow: 2px 2px 4px black, 0 0 25px #686868, 0 0 5px grey;
+    text-shadow: 2px 2px 4px black, 0 0 25px var(--second-color), 0 0 5px grey;
   }
   
   .U5 {
     color: #FFD180;
-    text-shadow: 2px 2px 4px black, 0 0 25px #686868, 0 0 5px grey;
+    text-shadow: 2px 2px 4px black, 0 0 25px var(--second-color), 0 0 5px grey;
   }
   
   .U6 {
     color: #CCFF90;
-    text-shadow: 2px 2px 4px black, 0 0 25px #686868, 0 0 5px grey;
+    text-shadow: 2px 2px 4px black, 0 0 25px var(--second-color), 0 0 5px grey;
   }
   
   .gameTime,
@@ -484,7 +504,7 @@
   }
   
   .adressDiv {
-    border-top: 1px solid #686868;
+    border-top: 1px solid var(--second-color);
   }
   
   .directionA,
@@ -519,8 +539,9 @@
   /* SCORES */
   
   #scores {
-    display: none;
-    margin-bottom: 100px;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-bottom: 40%;
   }
   
   .gamesPlayed,
@@ -529,7 +550,7 @@
     height: auto;
     display: flex;
     flex-flow: column nowrap;
-    /*  border: 1px solid #686868;*/
+    /*  border: 1px solid var(--second-color);*/
     border-radius: .25rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 10px auto;
@@ -541,7 +562,7 @@
   .upcomingTitle {
     display: flex;
     flex-flow: row nowrap;
-    background: #686868;
+    background: var(--second-color);
     padding: 10px 20px;
   }
   
@@ -585,7 +606,7 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    background: #7b4396;
+    background: var(--main-color);
   }
   
   .score1,
@@ -614,7 +635,7 @@
   .nolog {
     display: flex;
     flex-flow: column nowrap;
-    /*  border: 1px solid #686868;*/
+    /*  border: 1px solid var(--second-color);*/
     border-radius: .25rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 80%;
@@ -640,7 +661,7 @@
     text-align: center;
     margin: 10px 20px;
     padding: 10px;
-    color: #686868;
+    color: var(--second-color);
   }
   /* CONTACT */
   
@@ -680,7 +701,7 @@
   
   .jobTitle {
     font-size: 1.25rem;
-    color: #686868;
+    color: var(--second-color);
     margin-left: 10px;
     font-family: 'Droid Sans Mono', sans-serif;
   }
@@ -699,7 +720,7 @@
     margin-right: 5px;
     width: 24px;
     height: 24px;
-    color: #686868;
+    color: var(--second-color);
   }
   
   .adress {
@@ -786,7 +807,7 @@
     width: 100%;
     height: 100%;
     text-decoration: none;
-    border: 1px solid #686868;
+    border: 1px solid var(--second-color);
     /*  background: rgba(255, 255, 255, 0.3);*/
     /*    border-radius: 15px;*/
     /*      background: #0E3F4B;*/
@@ -856,7 +877,7 @@
   }
   
   .buttonTitle {
-    color: #686868;
+    color: var(--second-color);
     font-size: 3.25vw;
     font-family: 'Secular One', sans-serif;
     margin: 15px;
@@ -916,7 +937,7 @@
     width: 100%;
     height: 100%;
     text-decoration: none;
-    /*  border: 1px solid #686868;*/
+    /*  border: 1px solid var(--second-color);*/
   }
   
   .littleMenuIcon {
@@ -985,7 +1006,6 @@
     #scores {
       display: flex;
       flex-flow: row nowrap;
-      display: none;
     }
     .gamesPlayed,
     .gamesUpcoming {
@@ -1003,13 +1023,13 @@
       width: 25%;
     }
     .hidedInfo {
-      border-left: 1px solid #686868;
+      border-left: 1px solid var(--second-color);
       margin-bottom: 10px;
     }
     .adressDiv {
       margin-left: -110%;
     }
-    #contact{
+    #contact {
       overflow: scroll;
     }
   }

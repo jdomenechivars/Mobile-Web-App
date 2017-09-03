@@ -1,6 +1,8 @@
 // BUTTONS BEHAIVOR //
 
 $(document).ready(function () {
+  
+  $("#scores").hide();
 
   $(".sett").click(function () {
     $(".settingsPanelBox").animate({
