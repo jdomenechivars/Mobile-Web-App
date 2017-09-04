@@ -760,12 +760,12 @@ function createStadiums(data3) {
     stadiumDiv.appendChild(info);
 
     var stadiumName = document.createElement("div");
-    stadiumName.setAttribute("class", "stadiumName");
+    stadiumName.setAttribute("class", "stadiumFullName");
     stadiumName.innerHTML = eachStadium.name;
     info.appendChild(stadiumName);
 
     var facility = document.createElement("div");
-    facility.setAttribute("class", "faciltiy");
+    facility.setAttribute("class", "facility");
     facility.innerHTML = "Facility type: " + eachStadium.facility;
     info.appendChild(facility);
 
@@ -793,18 +793,23 @@ function createStadiums(data3) {
     adressDiv.appendChild(stadiumLocality);
     info.appendChild(adressDiv);
     
-//    var iframe = document.createElement("iframe");
-//    iframe.setAttribute("src", eachStadium.iframe);
-//    iframe.setAttribute("width", "200");
-//    iframe.setAttribute("height", "200");
-//    iframe.setAttribute("frameborder", "0");
-//    iframe.setAttribute("stye", "border:0");
-//    iframe.setAttribute("allowfullscreen", "");
-//    info.appendChild(iframe);
+    var iframe = document.createElement("div");
+    iframe.setAttribute("class","iframe");
+    iframe.innerHTML = eachStadium.iframe;
     
+    info.appendChild(iframe);
 
 
   }
+  
+  $(".infoStadDiv").hide();
+  $(".iframe").hide();
+  $(".stadiumName").click(function () {
+
+    $(this).siblings().slideToggle();
+    $(this).next().children(".iframe").fadeToggle(4000);
+
+  });
 
 }
 
