@@ -826,7 +826,7 @@
   #chat {
     display: none;
     height: 80%;
-    margin-bottom: 100px;
+    margin-bottom: 90px;
   }
   
   .nolog {
@@ -877,6 +877,8 @@
     margin: 10px auto;
     font-family: "arial";
     background-color: white;
+    overflow: scroll;
+    padding: 20px 5px;
   }
   
   .nologText {
@@ -935,27 +937,98 @@
     background: none;
   }
 
-.bubbles {
-	position: relative;
-	background: #7b4396;
-	border-radius: .4em;
-  width: 50%;
-  height: 20%;
+  .eachPost {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 95%
+  }
+
+  .myChat {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: space-between;
+    width: 95%;
+  }
+
+
+  .userNameChat {
+  padding: 15px;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
-.bubbles:after {
+  .bubblesText {
+    padding: 15px;
+    font-size: 1rem;
+    color: black;
+  }
+
+  .bubbles {
+    position: relative;
+    background: rgba(123, 67, 150, 0.5);
+    border-radius: .4em;
+    width: 70%;
+    height: auto;
+    min-height: 60px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 10%;
+  }
+
+  .myBubbles {
+    position: relative;
+    background: rgba(0, 170, 187, 0.5);
+    border-radius: .4em;
+    width: 70%;
+    height: auto;
+    min-height: 60px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10%;
+  }
+
+  .bubbles:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-right-color: rgba(123, 67, 150, 0.5);
+    border-left: 0;
+    border-top: 0;
+    margin-top: -10px;
+    margin-left: -20px;
+  }
+
+.myBubbles:after {
 	content: '';
 	position: absolute;
-	left: 0;
+	right: 0;
 	top: 50%;
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
-	border-right-color: #7b4396;
-	border-left: 0;
-	margin-top: -20px;
-	margin-left: -20px;
+	border-left-color: rgba(0, 170, 187, 0.5);
+	border-right: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-right: -20px;
 }
+
+  .pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+  }
+
+  .chatPic {
+    width: 20%;
+    width: 50px;
+    height: 50px;
+  }
   /* CONTACT */
   
   #contact {

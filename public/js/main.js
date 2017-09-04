@@ -1142,16 +1142,26 @@ function addFirebase() {
 
   });
 
+  var $cont = $('#posts');
 
-  getPosts();
+  getPosts($cont);
 
   document.getElementById("login").addEventListener("click", login);
 
   document.getElementById("logout").addEventListener("click", logout);
 
   document.getElementById("create-post").addEventListener("click", function () {
-    writeNewPost()
+    writeNewPost();
+    $cont[0].scrollTop = $cont[0].scrollHeight;
+
   });
+
+  $('#body').keyup(function (e) {
+    if (e.keyCode == 13) {
+      writeNewPost();
+      $cont[0].scrollTop = $cont[0].scrollHeight;
+    }
+  })
 
 }
 
@@ -1174,13 +1184,17 @@ function logout() {
 
 function writeNewPost() {
 
-  var title = document.getElementById("postTitle").value;
   var text = document.getElementById("body").value;
+
+  var userName = firebase.auth().currentUser.displayName;
+
+  var userPhoto = firebase.auth().currentUser.photoURL;
 
   // A post entry.
 
   var postData = {
-    title: title,
+    photo: userPhoto,
+    user: userName,
     body: text,
 
   };
@@ -1188,12 +1202,9 @@ function writeNewPost() {
   // Get a key for a new Post.
   var newPostKey = firebase.database().ref().child("match1").push().key;
 
-  var userName = firebase.auth().currentUser.displayName;
-
   var updates = {};
   updates["/match1/" + newPostKey] = postData;
 
-  document.getElementById("postTitle").value = "";
   document.getElementById("body").value = "";
 
   return firebase.database().ref().update(updates);
@@ -1210,20 +1221,47 @@ function getPosts() {
 
     for (var key in posts) {
 
+      var element = posts[key];
+      var myName = firebase.auth().currentUser.displayName;
+
+
+      var eachPost = document.createElement("div");
+
+      var chatPic = document.createElement("div");
+      chatPic.setAttribute("class", "chatPic");
+
+      var pic = document.createElement("img");
+      pic.setAttribute("class", "pic");
+      pic.setAttribute("src", element.photo);
+
+      chatPic.appendChild(pic);
+      eachPost.appendChild(chatPic);
+
       var bubles = document.createElement("div");
-      bubles.setAttribute("class", "bubbles");
+
+
+      var userNameChat = document.createElement("p");
+      userNameChat.innerHTML = element.user;
+      userNameChat.setAttribute("class", "userNameChat")
 
       var text = document.createElement("p");
-      text.setAtribute("class", "bubbllesText");
+      text.setAttribute("class", "bubblesText");
 
-      var element = posts[key];
 
-      //      text.append(element.title);
+      if (element.user == myName) {
+        eachPost.setAttribute("class", "myChat");
+        bubles.setAttribute("class", "myBubbles");
+      } else {
+        eachPost.setAttribute("class", "eachPost");
+        bubles.setAttribute("class", "bubbles");
+      }
 
       text.innerHTML = element.body;
+      bubles.appendChild(userNameChat);
       bubles.appendChild(text);
+      eachPost.appendChild(bubles);
 
-      logs.appendChild(bubles);
+      logs.appendChild(eachPost);
 
     }
   })
