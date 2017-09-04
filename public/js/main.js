@@ -4,7 +4,24 @@ $(document).ready(function () {
 
   $("#scores").hide();
   $("#teams").hide();
-  
+
+  $(".aback").click(function () {
+
+    $("#title").empty();
+    $("#title").append("NYSL - APP");
+
+    $("#mainBackground").show();
+    $("#news").hide();
+    $("#schedule").hide();
+    $("#scores").hide();
+    $("#teams").hide();
+    $("#chat").hide();
+    $('#contact').hide();
+    $(".aback").hide();
+    $(".menu1").show();
+    $(".menu2").hide();
+
+  });
 
   $(".sett").click(function () {
     $(".settingsPanelBox").animate({
@@ -745,7 +762,7 @@ function createStadiums(data3) {
     var eachStadium = stadiums[v];
 
     var stadiumDiv = document.createElement("div");
-    stadiumDiv.setAttribute("class", "stadiumDiv");
+    stadiumDiv.setAttribute("class", "stadDiv");
     teamsPage.append(stadiumDiv);
 
     var stadiumName = document.createElement("div");
@@ -849,7 +866,7 @@ function createScores(data) {
 
   var day = obtainDayNumber();
 
-  for (z = 0; z < matches.length; z++) {
+  for (var z = 0; z < matches.length; z++) {
 
     var game = matches[z];
 
@@ -1193,14 +1210,20 @@ function getPosts() {
 
     for (var key in posts) {
 
-      var text = document.createElement("div");
+      var bubles = document.createElement("div");
+      bubles.setAttribute("class", "bubbles");
+
+      var text = document.createElement("p");
+      text.setAtribute("class", "bubbllesText");
+
       var element = posts[key];
 
-      text.append(element.title);
+      //      text.append(element.title);
 
-      text.append(element.body);
+      text.innerHTML = element.body;
+      bubles.appendChild(text);
 
-      logs.append(text);
+      logs.appendChild(bubles);
 
     }
   })

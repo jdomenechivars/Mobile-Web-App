@@ -616,7 +616,7 @@
     margin-bottom: 40%;
   }
   
-  .stadiumDiv {
+  .stadDiv {
     width: 80%;
     height: auto;
     display: -webkit-box;
@@ -934,6 +934,28 @@
     outline: none;
     background: none;
   }
+
+.bubbles {
+	position: relative;
+	background: #7b4396;
+	border-radius: .4em;
+  width: 50%;
+  height: 20%;
+}
+
+.bubbles:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #7b4396;
+	border-left: 0;
+	margin-top: -20px;
+	margin-left: -20px;
+}
   /* CONTACT */
   
   #contact {
@@ -1325,7 +1347,7 @@
       flex-flow: row wrap;
       margin-bottom: 40%;
     }
-    .stadiumDiv {
+    .stadDiv {
       width: 30%;
       height: auto;
       display: flex;
