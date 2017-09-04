@@ -3,6 +3,8 @@
 $(document).ready(function () {
 
   $("#scores").hide();
+  $("#teams").hide();
+  
 
   $(".sett").click(function () {
     $(".settingsPanelBox").animate({
@@ -792,16 +794,16 @@ function createStadiums(data3) {
     adressDiv.appendChild(stadiumStreet);
     adressDiv.appendChild(stadiumLocality);
     info.appendChild(adressDiv);
-    
+
     var iframe = document.createElement("div");
-    iframe.setAttribute("class","iframe");
+    iframe.setAttribute("class", "iframe");
     iframe.innerHTML = eachStadium.iframe;
-    
+
     info.appendChild(iframe);
 
 
   }
-  
+
   $(".infoStadDiv").hide();
   $(".iframe").hide();
   $(".stadiumName").click(function () {

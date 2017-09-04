@@ -611,7 +611,8 @@
   /* TEAMS */
   
   #teams {
-    display: none;
+    display: flex;
+    flex-flow: column nowrap;
     margin-bottom: 40%;
   }
   
@@ -1316,5 +1317,24 @@
     }
     #contact {
       overflow: scroll;
+    }
+    #teams {
+      display: flex;
+      justify-content: space-around;
+      align-items: baseline;
+      flex-flow: row wrap;
+      margin-bottom: 40%;
+    }
+    .stadiumDiv {
+      width: 30%;
+      height: auto;
+      display: flex;
+      flex-flow: row wrap;
+      border-radius: .25rem;
+      -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 25px 20px;;
+      font-family: "arial";
+      background-color: white;
     }
   }
