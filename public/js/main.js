@@ -815,7 +815,6 @@ function createStadiums(data3) {
 
 }
 
-
 // SCORES PAGE CREATOR //
 
 $.getJSON("json/schedule.json", function (data) {
