@@ -131,6 +131,10 @@ $(document).ready(function () {
     $("#chat").show();
     $('#contact').hide();
 
+    var logs = document.getElementById("posts");
+    logs.scrollTop = logs.scrollHeight;
+
+
   });
 
   $(".contact").click(function () {
@@ -1144,19 +1148,25 @@ function addFirebase() {
 
   var $cont = $('#posts');
 
-  getPosts($cont);
+  getPosts();
 
   document.getElementById("login").addEventListener("click", login);
 
   document.getElementById("logout").addEventListener("click", logout);
 
+  var entry = document.getElementById("body").value;
+
   document.getElementById("create-post").addEventListener("click", function () {
+
     writeNewPost();
     $cont[0].scrollTop = $cont[0].scrollHeight;
+
 
   });
 
   $('#body').keyup(function (e) {
+
+
     if (e.keyCode == 13) {
       writeNewPost();
       $cont[0].scrollTop = $cont[0].scrollHeight;
@@ -1190,25 +1200,27 @@ function writeNewPost() {
 
   var userPhoto = firebase.auth().currentUser.photoURL;
 
-  // A post entry.
 
-  var postData = {
-    photo: userPhoto,
-    user: userName,
-    body: text,
+  if (text) {
+    // A post entry.
 
-  };
+    var postData = {
+      photo: userPhoto,
+      user: userName,
+      body: text,
 
-  // Get a key for a new Post.
-  var newPostKey = firebase.database().ref().child("match1").push().key;
+    };
 
-  var updates = {};
-  updates["/match1/" + newPostKey] = postData;
+    // Get a key for a new Post.
+    var newPostKey = firebase.database().ref().child("match1").push().key;
 
-  document.getElementById("body").value = "";
+    var updates = {};
+    updates["/match1/" + newPostKey] = postData;
 
-  return firebase.database().ref().update(updates);
+    document.getElementById("body").value = "";
 
+    return firebase.database().ref().update(updates);
+  }
 }
 
 function getPosts() {
@@ -1264,6 +1276,9 @@ function getPosts() {
       logs.appendChild(eachPost);
 
     }
+
+
   })
+
 
 }
