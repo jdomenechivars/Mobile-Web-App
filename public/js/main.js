@@ -118,6 +118,8 @@ $(document).ready(function () {
 
   });
 
+  addFirebase();
+
   $(".chat").click(function () {
 
     $("#title").empty();
@@ -133,7 +135,6 @@ $(document).ready(function () {
 
     var logs = document.getElementById("posts");
     logs.scrollTop = logs.scrollHeight;
-
 
   });
 
@@ -152,7 +153,7 @@ $(document).ready(function () {
 
   });
 
-  addFirebase();
+
 
 });
 
@@ -1126,6 +1127,7 @@ function addFirebase() {
       $(".nolog").hide();
       $(".loged").show();
 
+      getPosts();
 
     } else {
 
@@ -1141,20 +1143,17 @@ function addFirebase() {
       $(".nolog").show();
       $(".loged").hide();
 
-
     }
 
   });
 
-  var $cont = $('#posts');
 
-  getPosts();
+  var $cont = $('#posts');
 
   document.getElementById("login").addEventListener("click", login);
 
-  document.getElementById("logout").addEventListener("click", logout);
 
-  var entry = document.getElementById("body").value;
+  document.getElementById("logout").addEventListener("click", logout);
 
   document.getElementById("create-post").addEventListener("click", function () {
 
@@ -1180,6 +1179,8 @@ function login() {
   var provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider);
 
+
+
 }
 
 function logout() {
@@ -1199,7 +1200,6 @@ function writeNewPost() {
   var userName = firebase.auth().currentUser.displayName;
 
   var userPhoto = firebase.auth().currentUser.photoURL;
-
 
   if (text) {
     // A post entry.
@@ -1236,7 +1236,6 @@ function getPosts() {
       var element = posts[key];
       var myName = firebase.auth().currentUser.displayName;
 
-
       var eachPost = document.createElement("div");
 
       var chatPic = document.createElement("div");
@@ -1250,16 +1249,6 @@ function getPosts() {
       eachPost.appendChild(chatPic);
 
       var bubles = document.createElement("div");
-
-
-      var userNameChat = document.createElement("p");
-      userNameChat.innerHTML = element.user;
-      userNameChat.setAttribute("class", "userNameChat")
-
-      var text = document.createElement("p");
-      text.setAttribute("class", "bubblesText");
-
-
       if (element.user == myName) {
         eachPost.setAttribute("class", "myChat");
         bubles.setAttribute("class", "myBubbles");
@@ -1268,17 +1257,29 @@ function getPosts() {
         bubles.setAttribute("class", "bubbles");
       }
 
+      var userNameChat = document.createElement("p");
+      userNameChat.innerHTML = element.user;
+      userNameChat.setAttribute("class", "userNameChat")
+
+      var text = document.createElement("p");
+      text.setAttribute("class", "bubblesText");
+
       text.innerHTML = element.body;
       bubles.appendChild(userNameChat);
       bubles.appendChild(text);
       eachPost.appendChild(bubles);
 
-      logs.appendChild(eachPost);
+      logs.append(eachPost);
 
     }
 
+    var logs = document.getElementById("posts");
+    logs.scrollTop = logs.scrollHeight;
 
   })
+
+  var logs = document.getElementById("posts");
+  logs.scrollTop = logs.scrollHeight;
 
 
 }
