@@ -29,7 +29,6 @@
     background: -webkit-gradient(linear, left top, left bottom, from(white), to(gainsboro));
     background: linear-gradient(white, gainsboro);
     /*     Standard syntax (must be last) */
-    /*  background-image: url(images/design2_image2.jpg);*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -974,6 +973,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
     margin-right: 10%;
+    word-wrap: break-word;
   }
 
   .myBubbles {
@@ -986,6 +986,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 10%;
+    word-wrap: break-word;
   }
 
   .bubbles:after {
